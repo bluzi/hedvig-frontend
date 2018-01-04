@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View, Image, Dimensions, Keyboard } from "react-native"
+import { View, Image, Dimensions, Keyboard } from "react-native"
 import { BaseScrollViewStyle } from "../Styles"
 import {
   StyledDefaultMessageText,
@@ -11,6 +11,7 @@ import {
 } from "../styles/chat"
 import EditMessageButton from "../../containers/chat/EditMessageButton"
 import Avatar from "../../containers/chat/Avatar"
+import { DefaultAvatar } from "./Avatar"
 import LoadingIndicator from "../../containers/chat/LoadingIndicator"
 import { theme } from "hedvig-style"
 import { registerOnScrollToEndEvent, unregisterOnScrollToEndEvent } from "../../services/MessageListScroll"
@@ -129,12 +130,17 @@ const renderMessage = function(message, idx, lastIndex = false) {
     }
   }
 
-  let avatar =
-    lastIndex && message.header.avatarName ? (
+  let avatar = null
+  if (lastIndex) {
+    avatar = message.header.avatarName ? (
       <StyledAvatarContainer>
         <Avatar messageIndex={idx} />
       </StyledAvatarContainer>
-    ) : null
+    ) : (
+      <StyledAvatarContainer>
+        <DefaultAvatar />
+      </StyledAvatarContainer>)
+  }
   return (
     <View key={message.globalId || idx}>
       {avatar}

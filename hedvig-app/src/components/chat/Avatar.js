@@ -1,9 +1,9 @@
 import React from "react"
-import { Animated, Text } from "react-native"
+import { Animated, Image } from "react-native"
 import { DangerZone } from "expo"
 const { Lottie } = DangerZone
 
-export default class Avatar extends React.Component {
+export class AnimatedAvatar extends React.Component {
   state = {
     progress: new Animated.Value(0)
   }
@@ -11,7 +11,8 @@ export default class Avatar extends React.Component {
   play() {
     Animated.timing(this.state.progress, {
       toValue: 1,
-      duration: this.props.avatar.duration
+      duration: this.props.avatar.duration,
+      useNativeDriver: true
     }).start()
   }
 
@@ -32,5 +33,16 @@ export default class Avatar extends React.Component {
     } else {
       return null
     }
+  }
+}
+
+export class DefaultAvatar extends React.Component {
+  render() {
+    return (
+      <Image
+        style={{width: 50, height: 50}}
+        source={require("../../../assets/app_icon.png")}
+      />
+    )
   }
 }

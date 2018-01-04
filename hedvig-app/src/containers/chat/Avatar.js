@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import Avatar from "../../components/chat/Avatar"
+import { AnimatedAvatar } from "../../components/chat/Avatar"
 
 const mapStateToProps = (state, ownProps) => {
   if (state.chat.messages.length > 0) {
@@ -15,6 +15,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-const AvatarContainer = connect(mapStateToProps, undefined)(Avatar)
+const AvatarContainer = connect(mapStateToProps, undefined)(AnimatedAvatar)
 
 export default AvatarContainer
