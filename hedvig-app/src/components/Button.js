@@ -91,10 +91,11 @@ export const RedRoundedInvertedButtonWithChildren = ({ onPress, children }) => {
 
 export const TurquoiseRoundedInvertedButtonWithChildren = ({
   onPress,
-  children
+  children,
+  style = undefined
 }) => {
   return (
-    <StyledTurquoiseRoundedButtonInverted onPress={onPress} hitSlop={hitSlop}>
+    <StyledTurquoiseRoundedButtonInverted onPress={onPress} hitSlop={hitSlop} {...style ? {style} : {}}>
       {children}
     </StyledTurquoiseRoundedButtonInverted>
   )
@@ -116,9 +117,9 @@ export const RedRoundedInvertedButton = ({ title, onPress }) => {
   )
 }
 
-export const TurquoiseRoundedInvertedButton = ({ title, onPress }) => {
+export const TurquoiseRoundedInvertedButton = ({ title, onPress, style = undefined }) => {
   return (
-    <TurquoiseRoundedInvertedButtonWithChildren onPress={onPress}>
+    <TurquoiseRoundedInvertedButtonWithChildren onPress={onPress} {...style ? {style} : {}}>
       <StyledButtonTextInverted>{title}</StyledButtonTextInverted>
     </TurquoiseRoundedInvertedButtonWithChildren>
   )

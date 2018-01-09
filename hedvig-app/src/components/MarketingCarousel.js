@@ -10,11 +10,9 @@ import {
   StyledSmallText,
   StyledPassiveText
 } from "./styles/text"
-import { TextButton, TurquoiseRoundedInvertedButton } from "./Button"
+import { TextButton, TurquoiseRoundedInvertedButton, ButtonOrTextInput } from "./Button"
 import { ConnectedReduxBaseNavigator } from "../containers/navigation/navigation"
 import { types } from "hedvig-redux"
-
-import { UploadingAnimation } from "./Animation"
 
 const contents = [
   {
@@ -106,7 +104,7 @@ export default class MarketingCarousel extends React.Component {
     index: 0
   }
 
-  _renderItem({ item, index }) {
+  _renderItem({ item }) {
     if (item.imageUrl) {
       return (
         <Image
@@ -135,9 +133,14 @@ export default class MarketingCarousel extends React.Component {
     let maybeEndButton
     if (data.endButton) {
       maybeEndButton = (
-        <View style={{ marginTop: 20, marginBottom: 40 }}>
+        <View style={{ marginTop: 20, marginBottom: 40, justifyContent: "space-between" }}>
           <TurquoiseRoundedInvertedButton
-            title="Säg hej till Hedvig!"
+            title="Skriv in din Hedvig-kod"
+            onPress={() => this.props.dismiss()}
+            style={{marginBottom: 12}}
+          />
+          <TurquoiseRoundedInvertedButton
+            title="Ställ dig i kö för Hedvig"
             onPress={() => this.props.dismiss()}
           />
         </View>
@@ -195,7 +198,7 @@ export default class MarketingCarousel extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = () => {
   return {}
 }
 
