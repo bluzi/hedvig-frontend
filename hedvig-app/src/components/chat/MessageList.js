@@ -1,6 +1,6 @@
 import React from "react"
 import { View, Image, Dimensions, Keyboard } from "react-native"
-import { BaseScrollViewStyle } from "../Styles"
+import { StyledKeyboardAwareScrollView } from "../Styles"
 import {
   StyledDefaultMessageText,
   StyledDefaultUserMessageText,
@@ -159,50 +159,11 @@ const renderMessages = function(messages) {
 }
 
 export default class MessageList extends React.Component {
-  componentDidMount() {
-    this.keyboardDidShowListener = Keyboard.addListener(
-      "keyboardDidShow",
-      this.handleKeyboardStateChange.bind(this)
-    )
-    this.keyboardDidHideListener = Keyboard.addListener(
-      "keyboardDidHide",
-      this.handleKeyboardStateChange.bind(this)
-    )
-    // TODO: Unregister this listener on componentWillUnmount
-    registerOnScrollToEndEvent(this._scrollToEnd)
-  }
-
-  _scrollToEnd = () => {
-      if (this.ref) {
-        this.ref.scrollToEnd()
-      }
-    }
-
-  componentWillUnmount() {
-    if (this.keyboardDidShowListener) {
-      this.keyboardDidShowListener.remove()
-    }
-    if (this.keyboardDidHideListener) {
-      this.keyboardDidHideListener.remove()
-    }
-    unregisterOnScrollToEndEvent(this.scrollToEnd)
-  }
-
-  handleKeyboardStateChange(event) {
-    if (this.ref) {
-      setTimeout(this.ref.scrollToEnd, 0)
-    }
-  }
-
   render() {
     return (
-      <BaseScrollViewStyle
-        showsVerticalScrollIndicator={false}
-        innerRef={x => (this.ref = x)}
-        onContentSizeChange={() => this.ref.scrollToEnd()}
-      >
+      <StyledKeyboardAwareScrollView>
         {renderMessages(this.props.messages)}
-      </BaseScrollViewStyle>
+      </StyledKeyboardAwareScrollView>
     )
   }
 }
