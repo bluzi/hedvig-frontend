@@ -2,8 +2,9 @@
 import StorybookUI from "./storybook"
 
 import React from "react"
-import { AppState, Keyboard, Platform } from "react-native"
+import { AppState, Keyboard, Platform, Text, View } from "react-native"
 import { Provider } from "react-redux"
+import { Util } from "expo";
 
 import * as hedvigRedux from "hedvig-redux"
 window.hedvigRedux = hedvigRedux
@@ -37,6 +38,10 @@ import {
 } from "@expo/react-native-action-sheet"
 
 export class App extends React.Component {
+  state = {
+    updated: false,
+  }
+
   constructor() {
     super()
     this.store = hedvigRedux.configureStore({
@@ -55,6 +60,13 @@ export class App extends React.Component {
       ]
     })
     window.store = this.store
+  }
+
+  componentWillMount() {
+    Util.addNewVersionListenerExperimental(() => {
+      this.setState({updated: true})
+      setTimeout(() => Util.reload(), 10000)
+    })
   }
 
   _handleAppStateChange = nextAppState => {
@@ -104,6 +116,11 @@ export class App extends React.Component {
   }
 
   render() {
+    if (this.state.updated) {
+      return (
+        <View><Text>Updating...</Text></View>
+      )
+    }
     return (
       <WithAssets>
         <ThemeProvider theme={theme}>
