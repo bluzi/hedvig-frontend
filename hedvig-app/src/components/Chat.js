@@ -19,6 +19,7 @@ import {
 import ParagraphInput from "../containers/chat/ParagraphInput"
 import { NavBar } from "./NavBar"
 import { ChatNavRestartButton, NavigateBackButton } from "./Button"
+import BankIdInitiator from "../containers/chat/BankIdInitiator";
 
 const getInputComponent = function(messages, navigation) {
   if (messages.length === 0) {
@@ -50,7 +51,8 @@ const getInputComponent = function(messages, navigation) {
     photo_upload: <PhotoInput messageIndex={lastIndex} />,
     bankid_collect: <BankIdCollectInput messageIndex={lastIndex} />,
     paragraph: <ParagraphInput messageIndex={lastIndex} />,
-    audio: <AudioInput messageIndex={lastIndex} />
+    audio: <AudioInput messageIndex={lastIndex} />,
+    bankid_initiate: <BankIdInitiator messageIndex={lastIndex} />
   }[lastMessageType]
 }
 
