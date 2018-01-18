@@ -9,6 +9,8 @@ import {
   DialogButtonStyle
 } from "./styles/dialog"
 
+Modal.setAppElement("#root")
+
 export default class Dialog extends React.Component {
   close() {
     this.props.emptyDialog()
@@ -77,13 +79,11 @@ export default class Dialog extends React.Component {
             borderRadius: 8,
             padding: 0,
             minHeight: 200,
-            minWidth: 437,
-            top: null,
-            right: null,
-            bottom: null,
-            left: null
+            maxWidth: "80%",
+            position: "absolute",
           }
         }}
+        className="__react_modal"
       >
         <DialogContainerStyle>
           <DialogTitleStyle>{this.props.message.title}</DialogTitleStyle>

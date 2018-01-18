@@ -1,3 +1,2 @@
-var _baseURL = "http://gateway.hedvig.com"
-console.log("API Base URL:", _baseURL)
+var _baseURL = "http://gateway.test.hedvig.com"
 export const baseURL = _baseURL

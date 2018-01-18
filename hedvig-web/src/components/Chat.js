@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 
 import MessageList from "../containers/chat/MessageList"
 import ChatNumberInput from "../containers/chat/ChatNumberInput"
@@ -18,7 +17,6 @@ import {
   InputAreaStyled
 } from "./styles/chat"
 import { ResetIconButton } from "./Button"
-import { NavStyled } from "./styles/nav"
 import { FullHeight } from "./styles/general"
 
 const getInputComponent = function(messages) {
@@ -47,16 +45,18 @@ export default class Chat extends React.Component {
 
   render() {
     return (
-      <FullHeight style={{ overflow: "hidden" }}>
+      <FullHeight>
         <Header
           headerRight={
             <ResetIconButton onClick={() => this.props.resetConversation()} />
           }
         />
         <ChatAreaStyled>
-          <MessageAreaStyled>
-            <MessageList />
-          </MessageAreaStyled>
+          <div style={{overflow: "hidden", height: "100%", minHeight: 0}}>
+            <MessageAreaStyled style={{width: "100%", height: "100%"}}>
+              <MessageList />
+            </MessageAreaStyled>
+          </div>
 
           <InputAreaStyled>
             {getInputComponent(this.props.messages)}

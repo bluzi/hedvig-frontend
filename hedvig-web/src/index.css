@@ -56,3 +56,36 @@ body {
 a {
   text-decoration: none;
 }
+
+.__react_modal {
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+
+.__react_modal:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .__react_modal {
+    min-width: 80%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0px;
+}
+

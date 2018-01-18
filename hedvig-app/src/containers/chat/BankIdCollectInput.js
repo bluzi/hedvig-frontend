@@ -1,4 +1,6 @@
 import { connect } from "react-redux"
+
+import { types } from "hedvig-redux"
 import BankIdCollectInput from "../../components/chat/BankIdCollectInput"
 
 const mapStateToProps = (state, ownProps) => {
@@ -7,12 +9,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    startCollecting: referenceId =>
-      dispatch({ type: "BANKID_COLLECT", payload: { referenceId } })
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  startCollecting: referenceId =>
+    dispatch({ type: types.BANKID_COLLECT, payload: { referenceId } })
+})
 
 const BankIdCollectInputContainer = connect(
   mapStateToProps,

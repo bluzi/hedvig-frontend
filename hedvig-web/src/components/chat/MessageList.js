@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { StyledMessage, MessageContainerStyled } from "../styles/chat"
-import { WhiteRoundedButtonStyled } from "../styles/button"
+import { StyledMessage, MessageContainerStyled, StyledUserMessage } from "../styles/chat"
 import EditMessageButton from "../../containers/chat/EditMessageButton"
 import Avatar from "../../containers/chat/Avatar"
 import LoadingIndicator from "../../containers/chat/LoadingIndicator"
@@ -14,8 +13,7 @@ const DefaultHedvigMessage = ({ message, textAlign }) => {
   )
 }
 
-const DefaultUserMessageStyle = WhiteRoundedButtonStyled.extend`
-  cursor: default;
+const DefaultUserMessageStyle = StyledUserMessage.extend`
   margin-right: ${props => (props.editAllowed ? "10px" : "0px")};
 `
 
@@ -63,10 +61,9 @@ const renderMessage = function(message, idx, isLastMessage) {
 
   if (message.body.text !== "") {
     return (
-      <div>
+      <div key={message.globalId || idx}>
         {isLastMessage ? <Avatar messageIndex={idx} /> : null}
         <div
-          key={message.globalId || idx}
           style={{
             display: "flex",
             marginBottom: 20,
@@ -108,7 +105,7 @@ export default class MessageList extends React.Component {
   render() {
     let messages = this.props.messages
     return (
-      <div>
+      <React.Fragment>
         {renderMessages(messages)}
         <MessageContainerStyled>
           <LoadingIndicator messageIndex={messages.length - 1} />
@@ -120,7 +117,7 @@ export default class MessageList extends React.Component {
             this.messagesEnd = el
           }}
         />
-      </div>
+      </React.Fragment>
     )
   }
 }

@@ -1,4 +1,27 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+const slideFromLeft = keyframes`
+  from {
+    transform: translate(-100px, 0px);
+    animation-timing-function: ease;
+  }
+
+  to {
+    transform: translate(0px, 0px)
+  }
+`
+
+export const StyledUserMessage = styled.div`
+  font-family: "Circular Std Book";
+  background-color: ${props => props.theme.colors.purple};
+  color: ${props => props.theme.colors.white};
+  border-radius: 24px;
+  padding: 12px 15px;
+  font-size: ${props => props.theme.typography.hedvigMessage.web.fontSize}px;
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+`
 
 export const StyledMessage = styled.div`
   font-family: "Merriweather";
@@ -10,14 +33,13 @@ export const StyledMessage = styled.div`
   display: flex;
   align-items: center;
   word-break: break-word;
+  animation: 0.5s ${slideFromLeft} 1;
 `
 
 export const MessageContainerStyled = styled.div`
-  background-image: url("/assets/identity/hedvig_symbol/hedvig_symbol.svg");
   background-size: 16px 22px;
   background-position: bottom 15px left;
   background-repeat: no-repeat;
-  padding-left: 34px;
 `
 
 export const OptionsContainerStyled = styled.div`
@@ -49,7 +71,11 @@ export const ChatAreaStyled = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: flex-end;
+  max-width: 1200px;
+  width: 100%;
+  align-self: center;
 
+  margin-top: 82px;
   padding-top: 20px;
   padding-bottom: 30px;
   @media (min-width: 992px) {
@@ -77,7 +103,10 @@ export const ChatAreaStyled = styled.div`
 
 export const MessageAreaStyled = styled.div`
   min-height: 100px;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   flex: 1;
   /* Enable momentum scrolling on iOS */
   -webkit-overflow-scrolling: touch;

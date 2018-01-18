@@ -12,7 +12,7 @@ const mapStateToProps = state => {
   return {
     keyboard: state.keyboard,
     currentlyUploading: state.upload.currentlyUploading,
-    getItem: id => {
+    getItem: id => { // TODO: Make this load properly from the state instead of deferred retrieval
       return state.assetTracker.items.find(item => item.id === id)
     }
   }
@@ -29,8 +29,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       )
     },
     deleteItem: item => {
-      dispatch(assetActions.deleteItem(item))
-      ownProps.navigation.goBack()
+      dispatch(dialogActions.showDialog({
+        title: "Vill du ta bort den här prylen?",
+        paragraph: "Tryck Ja för att ta bort den här prylen.",
+        confirmButtonTitle: "Ja",
+        dismissButtonTitle: "Nej",
+        onConfirm: () => {
+          dispatch(assetActions.deleteItem(item))
+          ownProps.navigation.goBack()
+        },
+        onDismiss: () => {}
+      }))
     },
     setStatusMessage: message =>
       dispatch(statusMessageActions.setStatusMessage({ message })),
