@@ -7,9 +7,9 @@
       "backgroundColor": "#FFFFFF"
     },
     "version": "1.0.8",
-    "slug": "hedvig-app",
+    "slug": "hedvig-test-app",
     "scheme": "hedvig-test",
-    "sdkVersion": "22.0.0",
+    "sdkVersion": "24.0.0",
     "privacy": "unlisted",
     "ios": {
       "buildNumber": "1.0.8",
@@ -22,7 +22,7 @@
     "android": {
       "package": "com.hedvig.test.app",
       "permissions": ["CAMERA", "RECORD_AUDIO"],
-      "versionCode": 3
+      "versionCode": 4
     },
     "packagerOpts": {
       "projectRoots": "",
