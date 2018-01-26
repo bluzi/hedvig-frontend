@@ -6,7 +6,7 @@ import {
   DialogTitleStyle,
   DialogParagraphStyle,
   DialogButtonsContainerStyle,
-  DialogButtonStyle
+  DialogButtonStyle,
 } from './styles/dialog';
 
 Modal.setAppElement('#root');
@@ -81,7 +81,7 @@ export default class Dialog extends React.Component {
             minHeight: 200,
             maxWidth: '80%',
             position: 'absolute',
-          }
+          },
         }}
         className="__react_modal"
       >

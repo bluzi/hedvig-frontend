@@ -5,7 +5,7 @@ export function perilSelected(peril, category) {
     type: PERIL_SELECTED,
     payload: {
       peril,
-      category
-    }
+      category,
+    },
   };
 }

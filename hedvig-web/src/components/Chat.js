@@ -14,7 +14,7 @@ import { Header } from '../components/Header';
 import {
   ChatAreaStyled,
   MessageAreaStyled,
-  InputAreaStyled
+  InputAreaStyled,
 } from './styles/chat';
 import { ResetIconButton } from './Button';
 import { FullHeight } from './styles/general';
@@ -34,7 +34,7 @@ const getInputComponent = function(messages) {
     date_picker: <DateInput messageIndex={lastIndex} />,
     bankid_collect: <BankIdCollectInput messageIndex={lastIndex} />,
     paragraph: <ParagraphInput messageIndex={lastIndex} />,
-    file: <FileInput messageIndex={lastIndex} />
+    file: <FileInput messageIndex={lastIndex} />,
   }[lastMessageType];
 };
 

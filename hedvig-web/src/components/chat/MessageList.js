@@ -24,7 +24,7 @@ const DefaultUserMessage = ({ message, textAlign }) => (
     style={{
       display: 'flex',
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
     }}
   >
     <DefaultUserMessageStyle editAllowed={message.header.editAllowed}>
@@ -38,7 +38,7 @@ const UserMessageMapping = {};
 
 const HedvigMessageMapping = {
   // hero: HeroMessage,
-  bankid_collect: () => null // <-- This is how to not render certain types of messages from Hedvig
+  bankid_collect: () => null, // <-- This is how to not render certain types of messages from Hedvig
 };
 
 const renderMessage = function (message, idx, isLastMessage) {
@@ -68,7 +68,7 @@ const renderMessage = function (message, idx, isLastMessage) {
             display: 'flex',
             marginBottom: 20,
             flexDirection,
-            alignSelf
+            alignSelf,
           }}
         >
           <MessageRenderComponent message={message} textAlign={textAlign} />

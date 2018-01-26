@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   selectChoice: (message, choice) =>
     dispatch(chatActions.selectChoice(message, choice)),
-  done: message => dispatch(chatActions.sendChatResponse(message))
+  done: message => dispatch(chatActions.sendChatResponse(message)),
 });
 
 const SingleSelectInputContainer = connect(mapStateToProps, mapDispatchToProps)(

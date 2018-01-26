@@ -12,13 +12,13 @@ export default class PerilDetails extends React.Component {
           item: peril,
           canGoLeft,
           canGoRight,
-          changeSelectedIndex
+          changeSelectedIndex,
         }) => (
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <div>{peril.title}</div>
@@ -27,7 +27,7 @@ export default class PerilDetails extends React.Component {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                width: '100%'
+                width: '100%',
               }}
             >
               <div

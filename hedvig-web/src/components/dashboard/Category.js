@@ -71,7 +71,7 @@ const Category = ({
   data,
   perilSelected = (p, d) => console.log('Peril', p, 'clicked in category', d),
   category,
-  initialPerilIndex
+  initialPerilIndex,
 }) => {
   let maybePerilDetails;
   if (category && data.title === category.title) {

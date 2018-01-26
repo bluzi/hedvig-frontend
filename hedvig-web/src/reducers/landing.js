@@ -3,7 +3,7 @@ export default (state = { visible: false }, action) => {
     case 'LANDING/CTA_VISIBILITY_CHANGED':
       return {
         ...state,
-        visible: action.payload.status
+        visible: action.payload.status,
       };
 
     default:

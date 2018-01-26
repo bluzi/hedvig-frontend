@@ -16,7 +16,7 @@ export default class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
-      cashbackModalShowing: false
+      cashbackModalShowing: false,
     };
   }
 

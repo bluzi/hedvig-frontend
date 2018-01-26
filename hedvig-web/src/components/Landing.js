@@ -37,7 +37,7 @@ const HidingCtaButton = ({ isVisible }) =>
   ) : null);
 
 const ConnectedHidingCtaButton = connect(state => ({
-  isVisible: state.landing.visible
+  isVisible: state.landing.visible,
 }))(HidingCtaButton);
 
 const Landing = () => (

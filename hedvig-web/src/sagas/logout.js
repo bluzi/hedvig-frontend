@@ -12,7 +12,7 @@ const handleLogout = function*(action) {
       url: '/logout',
       body: null,
       SUCCESS: 'LOGOUT_REQUESTED',
-    }
+    },
   });
 
   // Delete existing token from frontend

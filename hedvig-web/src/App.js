@@ -27,7 +27,7 @@ class App extends Component {
         landing: landingReducer,
       },
       additionalMiddleware: [routerMiddleware],
-      additionalSagas: [tokenStorageSaga, logoutSaga]
+      additionalSagas: [tokenStorageSaga, logoutSaga],
     });
     window.store = this.store;
     getOrLoadToken(this.store.dispatch);

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   OptionsContainerStyled,
   WrappedOptionsContainerStyled,
-  StyledOptionContainer
+  StyledOptionContainer,
 } from '../styles/chat';
 import { WhiteRoundedButton } from '../Button';
 

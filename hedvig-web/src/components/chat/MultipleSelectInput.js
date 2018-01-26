@@ -2,13 +2,13 @@ import React from 'react';
 import {
   StyledOptionContainer,
   OptionsContainerStyled,
-  WrappedOptionsContainerStyled
+  WrappedOptionsContainerStyled,
 } from '../styles/chat';
 import {
   WhiteRoundedButton,
   PurpleRoundedButton,
   SendIconButton,
-  InactiveSendIconButton
+  InactiveSendIconButton,
 } from '../Button';
 
 const R = require('ramda');

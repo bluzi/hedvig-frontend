@@ -15,7 +15,8 @@ const mapDispatchToProps = dispatch => ({
         confirmButtonTitle: 'Ja',
         dismissButtonTitle: 'Nej',
         onConfirm: () => dispatch(chatActions.resetConversation()),
-        onDismiss: () => console.log("User didn't wan't to reset conversation."),
+        onDismiss: () =>
+          console.log("User didn't wan't to reset conversation."),
       }),
     ),
   editLastResponse: () => dispatch(chatActions.editLastResponse()),

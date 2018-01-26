@@ -64,5 +64,5 @@ export default connect(undefined, dispatch => ({
     dispatch({
       type: 'LANDING/CTA_VISIBILITY_CHANGED',
       payload: { status: isVisible },
-    })
+    }),
 }))(Splash);

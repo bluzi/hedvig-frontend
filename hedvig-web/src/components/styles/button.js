@@ -81,7 +81,7 @@ export const InactiveWhiteRoundedButtonStyled = WhiteRoundedButtonStyled.extend`
 
 const iconSizes = {
   medium: 24,
-  big: 40
+  big: 40,
 };
 export const IconButtonStyled = RoundedButtonStyled.extend`
   border: none;

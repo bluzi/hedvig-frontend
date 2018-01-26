@@ -7,7 +7,7 @@ import { CenteredColumn } from './styles/landing';
 import {
   OfferComponentSection,
   OfferHeading2,
-  PassiveText
+  PassiveText,
 } from './styles/offer';
 
 import HeaderWithScroll from '../containers/HeaderWithScroll';

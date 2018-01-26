@@ -5,7 +5,7 @@ import { chatActions, uploadActions } from 'hedvig-redux';
 const mapStateToProps = (state, ownProps) => {
   const message = state.chat.messages[ownProps.messageIndex];
   return {
-    message
+    message,
   };
 };
 

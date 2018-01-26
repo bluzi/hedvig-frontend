@@ -23,13 +23,13 @@ export default class CashbackAlternativeDetails extends React.Component {
           item: cashbackAlternative,
           canGoLeft,
           canGoRight,
-          changeSelectedIndex
+          changeSelectedIndex,
         }) => (
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <div>{cashbackAlternative.title}</div>
@@ -38,7 +38,7 @@ export default class CashbackAlternativeDetails extends React.Component {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                width: '100%'
+                width: '100%',
               }}
             >
               <div

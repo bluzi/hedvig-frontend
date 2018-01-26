@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   CenteredColumn,
   HeadingSubText,
-  AbsoluteFadeInParagraph
+  AbsoluteFadeInParagraph,
 } from '../styles/landing';
 import { BlackPurpleHeading2 } from '../styles/typography';
 import { WhiteRoundedButton } from '../Button';
@@ -69,7 +69,7 @@ const Phone = styled.img`
 
 export default class AssetTrackerDemo extends React.Component {
   state = {
-    expanded: false
+    expanded: false,
   };
 
   maybeExpanded() {

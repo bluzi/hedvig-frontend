@@ -26,12 +26,12 @@ export function getOrLoadToken(dispatch) {
   if (token) {
     dispatch({
       type: types.VALIDATE_TOKEN,
-      payload: token
+      payload: token,
     });
   } else {
     dispatch({
       type: types.AUTHENTICATE,
-      payload: {}
+      payload: {},
     });
   }
 }

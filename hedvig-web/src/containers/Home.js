@@ -3,7 +3,7 @@ import Home from '../components/Home';
 import { helloActions } from 'hedvig-redux';
 
 const mapStateToProps = state => ({
-  state
+  state,
 });
 
 const mapDispatchToProps = dispatch => ({

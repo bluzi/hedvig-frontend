@@ -6,7 +6,7 @@ import {
   userActions,
   insuranceActions,
   types,
-  dialogActions
+  dialogActions,
 } from 'hedvig-redux';
 
 const _apiAndNavigateToChat = (dispatch, endpoint, success) => {
@@ -15,7 +15,7 @@ const _apiAndNavigateToChat = (dispatch, endpoint, success) => {
     method: 'POST',
     url: endpoint,
     body: null,
-    SUCCESS: success
+    SUCCESS: success,
   })
   );
 };

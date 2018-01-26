@@ -2,7 +2,7 @@ import { SCROLL_Y_POSITION } from '../actions/scroll';
 
 const reducer = (
   state = {
-    scrollY: 0
+    scrollY: 0,
   },
   action
 ) => {

@@ -55,7 +55,7 @@ const PhoneContainer = styled.div`
 
 export default class ClaimDemo extends React.Component {
   state = {
-    expanded: false
+    expanded: false,
   };
 
   maybeExpanded() {
@@ -97,7 +97,7 @@ export default class ClaimDemo extends React.Component {
             options={{
               loop: true,
               autoplay: true,
-              animationData: require('../../bundledAssets/animations/claims_demo.json')
+              animationData: require('../../bundledAssets/animations/claims_demo.json'),
             }}
             height={610}
             width={352}

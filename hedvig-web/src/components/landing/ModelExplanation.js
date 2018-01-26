@@ -6,7 +6,7 @@ import {
   SubItem,
   HeadingContainer,
   SubItemText,
-  HeadingSubText
+  HeadingSubText,
 } from '../styles/landing';
 
 const Container = LandingComponentSection.extend`

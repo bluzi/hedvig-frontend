@@ -50,7 +50,7 @@ class DateInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      focused: false
+      focused: false,
     };
   }
 

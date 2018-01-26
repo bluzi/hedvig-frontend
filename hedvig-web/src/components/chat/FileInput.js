@@ -17,7 +17,7 @@ export default class FileInput extends React.Component {
               cursor: 'pointer',
               backgroundColor: 'green',
               color: 'white',
-              padding: 5
+              padding: 5,
             }}
           >
             Välj fil

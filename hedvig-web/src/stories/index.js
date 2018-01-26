@@ -94,7 +94,7 @@ const mockMessages = {
       imageWidth: null,
       imageHeight: null,
     },
-    timestamp: '2017-11-07T14:02:43.225Z'
+    timestamp: '2017-11-07T14:02:43.225Z',
   },
   2155: {
     globalId: 2155,
@@ -118,7 +118,7 @@ const mockMessages = {
       imageWidth: null,
       imageHeight: null,
     },
-    timestamp: '2017-11-07T14:02:43.225Z'
+    timestamp: '2017-11-07T14:02:43.225Z',
   },
   2156: {
     globalId: 2156,
@@ -141,7 +141,7 @@ const mockMessages = {
       imageWidth: null,
       imageHeight: null,
     },
-    timestamp: '2017-11-21T14:02:43.225Z'
+    timestamp: '2017-11-21T14:02:43.225Z',
   },
   // "2157": {
   //   globalId: 2157,
@@ -162,7 +162,7 @@ const mockMessages = {
     timestamp: 2158,
     header: {
       fromId: 1,
-      responsePath: '/response'
+      responsePath: '/response',
     },
     body: {
       type: 'multiple_select',
@@ -176,22 +176,22 @@ const mockMessages = {
         {
           type: 'link',
           text: 'I want to see my assets',
-          view: 'AssetTracker'
+          view: 'AssetTracker',
         },
         {
           type: 'link',
           text: 'I want to see my offer',
-          view: 'Dashboard'
+          view: 'Dashboard',
         },
         {
           type: 'link',
           text: 'Launch the calendar',
-          appUrl: 'calshow://'
+          appUrl: 'calshow://',
         },
         {
           type: 'link',
           text: 'Launch a webview',
-          webUrl: 'http://hedvig.com'
+          webUrl: 'http://hedvig.com',
         },
       ],
     },
@@ -202,11 +202,11 @@ const mockMessages = {
     timestamp: 2159,
     header: {
       fromId: 1,
-      responsePath: '/response'
+      responsePath: '/response',
     },
     body: {
       type: 'text',
-      text: 'Type something'
+      text: 'Type something',
     },
   },
 };
@@ -233,7 +233,7 @@ const description = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. A
 const images = [
   'https://s-media-cache-ak0.pinimg.com/originals/ee/51/39/ee5139157407967591081ee04723259a.png',
   'https://s-media-cache-ak0.pinimg.com/originals/40/4f/83/404f83e93175630e77bc29b3fe727cbe.jpg',
-  'https://s-media-cache-ak0.pinimg.com/originals/8d/1a/da/8d1adab145a2d606c85e339873b9bb0e.jpg'
+  'https://s-media-cache-ak0.pinimg.com/originals/8d/1a/da/8d1adab145a2d606c85e339873b9bb0e.jpg',
 ];
 const states = [
   'CREATED',
@@ -243,7 +243,7 @@ const states = [
   'REMOVE_PENDING',
   'WAITING_FOR_PAYMENT',
   'NOT_COVERED',
-  'COVERED'
+  'COVERED',
 ];
 const perils = [...R.range(0, 50)].map((i) => {
   const state = states[i % states.length];
@@ -262,19 +262,19 @@ const categories = [
     title: 'Du och din familj',
     description: 'Brand, inbrott, vattenläcka '.repeat(3),
     perils: perils.slice(0, 15),
-    iconUrl: 'https://unsplash.it/70/70'
+    iconUrl: 'https://unsplash.it/70/70',
   },
   {
     title: 'Boende',
     description: 'Brand, inbrott, vattenläcka',
     perils: perils.slice(7, 14),
-    iconUrl: 'https://unsplash.it/70/70'
+    iconUrl: 'https://unsplash.it/70/70',
   },
   {
     title: 'Prylar',
     description: '',
     perils: perils.slice(14, 21),
-    iconUrl: 'https://unsplash.it/70/70'
+    iconUrl: 'https://unsplash.it/70/70',
   },
 ];
 const insurance = {
@@ -288,7 +288,10 @@ storiesOf('Offer', module)
   .addDecorator((story) => {
     const offerStore = configureStore({
       additionalSagas: [tokenStorageSaga],
-      additionalReducers: { scroll: scrollPositionReducer, peril: perilReducer },
+      additionalReducers: {
+        scroll: scrollPositionReducer,
+        peril: perilReducer,
+      },
     });
     offerStore.dispatch({
       type: 'LOADED_INSURANCE',
@@ -302,7 +305,10 @@ storiesOf('Dashboard', module)
   .addDecorator((story) => {
     const dashboardStore = configureStore({
       additionalSagas: [tokenStorageSaga],
-      additionalReducers: { scroll: scrollPositionReducer, peril: perilReducer },
+      additionalReducers: {
+        scroll: scrollPositionReducer,
+        peril: perilReducer,
+      },
     });
     dashboardStore.dispatch({
       type: 'LOADED_INSURANCE',
@@ -318,7 +324,10 @@ storiesOf('Profile', module)
   .addDecorator((story) => {
     const profileStore = configureStore({
       additionalSagas: [tokenStorageSaga],
-      additionalReducers: { scroll: scrollPositionReducer, peril: perilReducer },
+      additionalReducers: {
+        scroll: scrollPositionReducer,
+        peril: perilReducer,
+      },
     });
     profileStore.dispatch({
       type: 'LOADED_USER',
@@ -339,7 +348,7 @@ storiesOf('Profile', module)
         selectedCashbackImageUrl: 'https://unsplash.it/400/400',
         selectedCashbackParagraph:
           '"Tack kära Lucas för att du bidrar till att rädda livet på fler cancerdrabbade barn"',
-        selectedCashbackSignature: 'Isabelle Ducellier, Generaldirektör'
+        selectedCashbackSignature: 'Isabelle Ducellier, Generaldirektör',
       },
     });
     profileStore.dispatch({
@@ -351,7 +360,7 @@ storiesOf('Profile', module)
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
           selected: false,
           charity: true,
-          imageUrl: 'https://unsplash.it/400/200'
+          imageUrl: 'https://unsplash.it/400/200',
         },
         {
           title: 'Mitt konto',
@@ -359,7 +368,7 @@ storiesOf('Profile', module)
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
           selected: true,
           charity: true,
-          imageUrl: 'https://unsplash.it/400/200'
+          imageUrl: 'https://unsplash.it/400/200',
         },
       ],
     });
@@ -387,7 +396,10 @@ storiesOf('Cashback Alternatives', module)
   .addDecorator((story) => {
     const cashbackStore = configureStore({
       additionalSagas: [tokenStorageSaga],
-      additionalReducers: { scroll: scrollPositionReducer, peril: perilReducer },
+      additionalReducers: {
+        scroll: scrollPositionReducer,
+        peril: perilReducer,
+      },
     });
     cashbackStore.dispatch({
       type: 'LOADED_CASHBACK_ALTERNATIVES',
@@ -398,7 +410,7 @@ storiesOf('Cashback Alternatives', module)
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
           selected: false,
           charity: true,
-          imageUrl: 'https://unsplash.it/400/200'
+          imageUrl: 'https://unsplash.it/400/200',
         },
         {
           title: 'Mitt konto',
@@ -406,7 +418,7 @@ storiesOf('Cashback Alternatives', module)
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
           selected: true,
           charity: true,
-          imageUrl: 'https://unsplash.it/400/200'
+          imageUrl: 'https://unsplash.it/400/200',
         },
       ],
     });

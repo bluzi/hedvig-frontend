@@ -3,7 +3,7 @@ import { PERIL_SELECTED } from '../actions/peril';
 const reducer = (
   state = {
     selectedPerilIndex: null,
-    selectedCategory: null
+    selectedCategory: null,
   },
   action
 ) => {
@@ -13,7 +13,7 @@ const reducer = (
         selectedCategory: action.payload.category,
         selectedPerilIndex: action.payload.category
           ? action.payload.category.perils.indexOf(action.payload.peril)
-          : null
+          : null,
       });
     default:
       return state;

@@ -6,7 +6,7 @@ import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText,
-  Divider
+  Divider,
 } from '../styles/offer';
 import { TurquoiseRoundedButtonStyled } from '../styles/button';
 

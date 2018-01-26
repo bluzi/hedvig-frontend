@@ -4,7 +4,7 @@ export default class Carousel extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedIndex: 0
+      selectedIndex: 0,
     };
   }
 
@@ -12,7 +12,7 @@ export default class Carousel extends React.Component {
     const nextIndex = this.state.selectedIndex + delta;
     if (nextIndex >= 0 && nextIndex < this.props.items.length) {
       this.setState({
-        selectedIndex: nextIndex
+        selectedIndex: nextIndex,
       });
     }
   }
@@ -40,7 +40,7 @@ export default class Carousel extends React.Component {
           item,
           canGoLeft: this.canGoLeft.bind(this),
           canGoRight: this.canGoRight.bind(this),
-          changeSelectedIndex: this.changeSelectedIndex.bind(this)
+          changeSelectedIndex: this.changeSelectedIndex.bind(this),
         })}
       </div>
     );

@@ -7,7 +7,7 @@ import {
   WhiteRoundedButtonStyled,
   InactiveWhiteRoundedButtonStyled,
   IconButtonStyled,
-  InactiveIconButtonStyled
+  InactiveIconButtonStyled,
 } from './styles/button';
 
 const defaultOnClick = () => {
@@ -85,7 +85,7 @@ export const EditIconButton = ({ onClick }) =>
   IconButton({
     iconUrl: '/assets/icons/chat/edit_last_message.svg',
     size: 'medium',
-    onClick
+    onClick,
   });
 
 // For storybook
@@ -96,7 +96,7 @@ export const ButtonsExample = () => (
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      margin: 40
+      margin: 40,
     }}
   >
     <TurquoiseRoundedButton>TurquoiseRoundedButton</TurquoiseRoundedButton>
