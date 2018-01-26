@@ -1,14 +1,14 @@
-import React from 'react'
-import { keyframes } from 'styled-components'
-import { connect } from 'react-redux'
+import React from 'react';
+import { keyframes } from 'styled-components';
+import { connect } from 'react-redux';
 
-import Collaboration from './landing/Collaboration'
-import Splash from './landing/Splash'
-import ClaimDemo from './landing/ClaimDemo'
-import AssetTrackerDemo from './landing/AssetTrackerDemo'
-import Footer from './Footer'
-import { Header } from '../components/Header'
-import ModelExplanation from './landing/ModelExplanation'
+import Collaboration from './landing/Collaboration';
+import Splash from './landing/Splash';
+import ClaimDemo from './landing/ClaimDemo';
+import AssetTrackerDemo from './landing/AssetTrackerDemo';
+import Footer from './Footer';
+import { Header } from '../components/Header';
+import ModelExplanation from './landing/ModelExplanation';
 import WaterDamagePage from './landing/WaterDamagePage';
 import { TurquoiseRoundedButtonStyled } from './styles/button';
 
@@ -31,28 +31,27 @@ const AnimatedCtaButton = TurquoiseRoundedButtonStyled.extend`
   animation: ${SlideDownAnimation} 0.1s linear;
 `;
 
-const HidingCtaButton = ({ isVisible }) => (
-  !isVisible ? (
+const HidingCtaButton = ({ isVisible }) =>
+  (!isVisible ? (
     <AnimatedCtaButton>Säg hej till Hedvig</AnimatedCtaButton>
-  ) : null;
+  ) : null);
 
 const ConnectedHidingCtaButton = connect(state => ({
-  isVisible: state.landing.visible,
+  isVisible: state.landing.visible
 }))(HidingCtaButton);
 
-const Landing = () =>  // Fragment is used as a quick hack to render nothing in place of a better solution right now
-   (
-    <div>
-      <Header headerRight={<ConnectedHidingCtaButton />}/>
-      <Splash />
-      <ClaimDemo />
-      <WaterDamagePage />
-      <AssetTrackerDemo />
-      <ModelExplanation />
-      <Collaboration />
-      <Footer />
-    </div>
-  )
-
+const Landing = () => (
+  // Fragment is used as a quick hack to render nothing in place of a better solution right now
+  <div>
+    <Header headerRight={<ConnectedHidingCtaButton />} />
+    <Splash />
+    <ClaimDemo />
+    <WaterDamagePage />
+    <AssetTrackerDemo />
+    <ModelExplanation />
+    <Collaboration />
+    <Footer />
+  </div>
+);
 
 export default Landing;

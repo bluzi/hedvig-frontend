@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   TurquoiseRoundedButtonStyled,
   PurpleRoundedButtonStyled,
@@ -8,23 +8,23 @@ import {
   InactiveWhiteRoundedButtonStyled,
   IconButtonStyled,
   InactiveIconButtonStyled
-} from "./styles/button";
+} from './styles/button';
 
 const defaultOnClick = () => {
-  console.log("Button clicked");
+  console.log('Button clicked');
 };
 
 // Regular rounded buttons
 
 export const TurquoiseRoundedButton = ({ onClick, children }) => (
   <TurquoiseRoundedButtonStyled onClick={onClick || defaultOnClick}>
-    {children || "No Content"}
+    {children || 'No Content'}
   </TurquoiseRoundedButtonStyled>
 );
 
 export const BlackPurpleRoundedButton = ({ onClick, children }) => (
   <BlackPurpleRoundedButtonStyled onClick={onClick || defaultOnClick}>
-    {children || "No Content"}
+    {children || 'No Content'}
   </BlackPurpleRoundedButtonStyled>
 );
 
@@ -32,25 +32,25 @@ export const BlackPurpleRoundedButtonWhiteBorder = ({ onClick, children }) => (
   <BlackPurpleRoundedButtonWhiteBorderStyled
     onClick={onClick || defaultOnClick}
   >
-    {children || "No Content"}
+    {children || 'No Content'}
   </BlackPurpleRoundedButtonWhiteBorderStyled>
 );
 
 export const PurpleRoundedButton = ({ onClick, children }) => (
   <PurpleRoundedButtonStyled onClick={onClick || defaultOnClick}>
-    {children || "No Content"}
+    {children || 'No Content'}
   </PurpleRoundedButtonStyled>
 );
 
 export const WhiteRoundedButton = ({ onClick, children }) => (
   <WhiteRoundedButtonStyled onClick={onClick || defaultOnClick}>
-    {children || "No Content"}
+    {children || 'No Content'}
   </WhiteRoundedButtonStyled>
 );
 
 export const InactiveWhiteRoundedButton = ({ onClick, children }) => (
   <InactiveWhiteRoundedButtonStyled onClick={onClick || defaultOnClick}>
-    {children || "No Content"}
+    {children || 'No Content'}
   </InactiveWhiteRoundedButtonStyled>
 );
 
@@ -70,21 +70,21 @@ const InactiveIconButton = ({ onClick, iconUrl, size }) => (
 );
 
 export const SendIconButton = ({ onClick, ...props }) =>
-  IconButton({ iconUrl: "/assets/icons/chat/send.svg", onClick, ...props });
+  IconButton({ iconUrl: '/assets/icons/chat/send.svg', onClick, ...props });
 
 export const InactiveSendIconButton = ({ onClick }) =>
-  InactiveIconButton({ iconUrl: "/assets/icons/chat/send_idle.svg", onClick });
+  InactiveIconButton({ iconUrl: '/assets/icons/chat/send_idle.svg', onClick });
 
 export const ExitIconButton = ({ onClick, ...props }) =>
-  IconButton({ iconUrl: "/assets/icons/chat/exit.svg", onClick, ...props });
+  IconButton({ iconUrl: '/assets/icons/chat/exit.svg', onClick, ...props });
 
 export const ResetIconButton = ({ onClick, ...props }) =>
-  IconButton({ iconUrl: "/assets/icons/chat/restart.svg", onClick, ...props });
+  IconButton({ iconUrl: '/assets/icons/chat/restart.svg', onClick, ...props });
 
 export const EditIconButton = ({ onClick }) =>
   IconButton({
-    iconUrl: "/assets/icons/chat/edit_last_message.svg",
-    size: "medium",
+    iconUrl: '/assets/icons/chat/edit_last_message.svg',
+    size: 'medium',
     onClick
   });
 
@@ -93,9 +93,9 @@ export const EditIconButton = ({ onClick }) =>
 export const ButtonsExample = () => (
   <div
     style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       margin: 40
     }}
   >

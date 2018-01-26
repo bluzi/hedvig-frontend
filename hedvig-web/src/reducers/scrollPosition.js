@@ -1,4 +1,4 @@
-import { SCROLL_Y_POSITION } from "../actions/scroll";
+import { SCROLL_Y_POSITION } from '../actions/scroll';
 
 const reducer = (
   state = {

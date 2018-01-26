@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import Profile from "../components/Profile";
+import { connect } from 'react-redux';
+import Profile from '../components/Profile';
 import {
   cashbackActions,
   chatActions,
@@ -7,12 +7,12 @@ import {
   insuranceActions,
   types,
   dialogActions
-} from "hedvig-redux";
+} from 'hedvig-redux';
 
 const _apiAndNavigateToChat = (dispatch, endpoint, success) => {
   dispatch(
     chatActions.apiAndNavigateToChat({
-    method: "POST",
+    method: 'POST',
     url: endpoint,
     body: null,
     SUCCESS: success
@@ -36,31 +36,31 @@ const mapDispatchToProps = dispatch => ({
     _apiAndNavigateToChat(
       dispatch,
       '/hedvig/initiateUpdate?what=PERSONAL_INFORMATOIN',
-      "REQUESTED_PERSONAL_INFO_UPDATE"
+      'REQUESTED_PERSONAL_INFO_UPDATE',
     ),
   editFamilyMembers: () =>
     _apiAndNavigateToChat(
       dispatch,
       '/hedvig/initiateUpdate?what=FAMILY_MEMBERS',
-      "REQUESTED_FAMILY_MEMBERS_UPDATE"
+      'REQUESTED_FAMILY_MEMBERS_UPDATE',
     ),
   editApartmentInfo: () =>
     _apiAndNavigateToChat(
       dispatch,
       '/hedvig/initiateUpdate?what=APARTMENT_INFORMATION',
-      "REQUESTED_APARTMENT_INFO_UPDATE"
+      'REQUESTED_APARTMENT_INFO_UPDATE',
     ),
   editSafetyIncreasers: () =>
     _apiAndNavigateToChat(
       dispatch,
-      "/hedvig/initiateUpdate?what=SAFETY_INCREASERS",
-      "REQUESTED_SAFETY_INCREASERS_UPDATE"
+      '/hedvig/initiateUpdate?what=SAFETY_INCREASERS',
+      'REQUESTED_SAFETY_INCREASERS_UPDATE',
     ),
   editBankAccount: () =>
     _apiAndNavigateToChat(
       dispatch,
-      "/hedvig/initiateUpdate?what=BANK_ACCOUNT",
-      "REQUESTED_BANK_ACCOUNT_UPDATE"
+      '/hedvig/initiateUpdate?what=BANK_ACCOUNT',
+      'REQUESTED_BANK_ACCOUNT_UPDATE',
     ),
   logout: () =>
     dispatch(dialogActions.showDialog({

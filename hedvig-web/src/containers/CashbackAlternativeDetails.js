@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import CashbackAlternativeDetails from "../components/CashbackAlternativeDetails";
-import { cashbackActions } from "hedvig-redux";
+import { connect } from 'react-redux';
+import CashbackAlternativeDetails from '../components/CashbackAlternativeDetails';
+import { cashbackActions } from 'hedvig-redux';
 
 const mapStateToProps = state => ({
   cashbackAlternatives: state.cashback.alternatives,

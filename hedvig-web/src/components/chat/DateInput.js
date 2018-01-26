@@ -1,13 +1,13 @@
-import React from "react";
-import moment from "moment";
-import "moment/locale/sv";
+import React from 'react';
+import moment from 'moment';
+import 'moment/locale/sv';
 
-import styled from "styled-components";
-import "react-dates/initialize";
-import { SingleDatePicker } from "react-dates";
-import { OPEN_UP } from "react-dates/constants";
-import "react-dates/lib/css/_datepicker.css";
-import { SendIconButton } from "../Button";
+import styled from 'styled-components';
+import 'react-dates/initialize';
+import { SingleDatePicker } from 'react-dates';
+import { OPEN_UP } from 'react-dates/constants';
+import 'react-dates/lib/css/_datepicker.css';
+import { SendIconButton } from '../Button';
 
 const WidgetContainer = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const WidgetContainer = styled.div`
 `;
 
 const DatePickerContainer = styled.div`
-  font-family: "Circular Std Book" !important;
+  font-family: 'Circular Std Book' !important;
 
   .SingleDatePickerInput {
     border: 1px solid ${props => props.theme.colors.darkGray};
@@ -75,7 +75,7 @@ class DateInput extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
             openDirection={OPEN_UP}
-            style={{ boxSizing: "border-box !important" }}
+            style={{ boxSizing: 'border-box !important' }}
             readOnly
             hideKeyboardShortcutsPanel
           />

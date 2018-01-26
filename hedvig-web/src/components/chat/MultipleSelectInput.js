@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 import {
   StyledOptionContainer,
   OptionsContainerStyled,
   WrappedOptionsContainerStyled
-} from "../styles/chat";
+} from '../styles/chat';
 import {
   WhiteRoundedButton,
   PurpleRoundedButton,
   SendIconButton,
   InactiveSendIconButton
-} from "../Button";
+} from '../Button';
 
-const R = require("ramda");
+const R = require('ramda');
 
 const MultipleSelectInput = ({ message, onChoiceSelected, done }) => {
   const opts = message.body.choices.map(choice => {
@@ -41,9 +41,9 @@ const MultipleSelectInput = ({ message, onChoiceSelected, done }) => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-end"
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
       }}
     >
       <Container>{opts}</Container>

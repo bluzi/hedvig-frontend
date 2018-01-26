@@ -1,21 +1,21 @@
-import React from "react";
-import Modal from "react-modal";
-import styled from "styled-components";
-import { ResetIconButton } from "./Button";
+import React from 'react';
+import Modal from 'react-modal';
+import styled from 'styled-components';
+import { ResetIconButton } from './Button';
 
-import { CenteredColumn } from "./styles/landing";
+import { CenteredColumn } from './styles/landing';
 import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText
-} from "./styles/offer";
+} from './styles/offer';
 
-import HeaderWithScroll from "../containers/HeaderWithScroll";
-import Category from "../containers/dashboard/Category";
-import MyInsurance from "../containers/dashboard/MyInsurance";
-import InsuranceLimits from "./dashboard/InsuranceLimits";
-import PerilDetailsCarousel from "./dashboard/PerilDetailsCarousel";
-import Footer from "../components/Footer";
+import HeaderWithScroll from '../containers/HeaderWithScroll';
+import Category from '../containers/dashboard/Category';
+import MyInsurance from '../containers/dashboard/MyInsurance';
+import InsuranceLimits from './dashboard/InsuranceLimits';
+import PerilDetailsCarousel from './dashboard/PerilDetailsCarousel';
+import Footer from '../components/Footer';
 
 const Container = styled.div`
   background-color: ${props => props.theme.colors.offWhite};
@@ -50,7 +50,7 @@ export default class Offer extends React.Component {
           <OfferHeading2 style={{ marginTop: 80, marginBottom: 16 }}>
             Vad försäkringen täcker
           </OfferHeading2>
-          <PassiveText style={{ lineHeight: "20px", marginBottom: 80 }}>
+          <PassiveText style={{ lineHeight: '20px', marginBottom: 80 }}>
             Klicka på ikonerna för mer info.
           </PassiveText>
           {this.categories()}
@@ -67,7 +67,7 @@ export default class Offer extends React.Component {
         onRequestClose={this.props.closePerilModal}
       >
         <div
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
           onClick={() => this.props.closePerilModal()}
         >
           Close

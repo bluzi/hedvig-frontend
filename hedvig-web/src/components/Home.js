@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Placeholder } from "./Styles";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Placeholder } from './Styles';
 
 const Name = styled.span`
   font-size: 30px;

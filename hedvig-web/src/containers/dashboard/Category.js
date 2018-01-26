@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import Category from "../../components/dashboard/Category";
-import { perilSelected } from "../../actions/peril";
+import { connect } from 'react-redux';
+import Category from '../../components/dashboard/Category';
+import { perilSelected } from '../../actions/peril';
 
 const mapStateToProps = state => ({});
 

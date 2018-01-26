@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import Avatar from "../../components/chat/Avatar";
+import { connect } from 'react-redux';
+import Avatar from '../../components/chat/Avatar';
 
 const mapStateToProps = (state, ownProps) => {
   if (state.chat.messages.length > 0) {

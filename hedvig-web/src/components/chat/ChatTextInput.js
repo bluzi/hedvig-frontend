@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 import { SendIconButton, InactiveSendIconButton } from '../Button';
-import { TextInputStyled } from "../styles/chat";
+import { TextInputStyled } from '../styles/chat';
 
 export default class ChatTextInput extends React.Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ export default class ChatTextInput extends React.Component {
   }
 
   render() {
-    const { message, onChange, send, type = "text" } = this.props;
+    const { message, onChange, send, type = 'text' } = this.props;
 
     const SendButton = message._inputValue ? (
       <SendIconButton type="submit" />
@@ -31,21 +31,21 @@ export default class ChatTextInput extends React.Component {
           send(message);
         }}
         style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "flex-end"
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-end',
         }}
       >
         <TextInputStyled
           type={type}
           placeholder="Skriv här..."
           innerRef={input => (this.input = input)}
-          value={message._inputValue || ""}
+          value={message._inputValue || ''}
           onChange={event => {
-            console.log("Stop propagation is: ", event.isPropagationStopped);
+            console.log('Stop propagation is: ', event.isPropagationStopped);
             onChange(message, event.target.value);
           }}
-          style={{ marginBottom: "10px" }}
+          style={{ marginBottom: '10px' }}
         />
         <div
           style={{ display: 'flex', marginBottom: '10px', marginLeft: '10px' }}

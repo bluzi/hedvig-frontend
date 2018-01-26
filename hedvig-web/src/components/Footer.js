@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { FooterIconStyled } from "./styles/footer";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { FooterIconStyled } from './styles/footer';
 
 const Container = styled.div`
   display: flex;

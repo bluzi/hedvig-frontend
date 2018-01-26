@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import {
   CenteredColumn,
   HeadingSubText,
   AbsoluteFadeInParagraph
-} from "../styles/landing";
-import { BlackPurpleHeading2 } from "../styles/typography";
-import { WhiteRoundedButton } from "../Button";
+} from '../styles/landing';
+import { BlackPurpleHeading2 } from '../styles/typography';
+import { WhiteRoundedButton } from '../Button';
 
 const MyBlackPurpleHeading2 = BlackPurpleHeading2.extend`
   text-align: center;

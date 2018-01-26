@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import SingleSelectInput from "../../components/chat/SingleSelectInput";
-import { chatActions } from "hedvig-redux";
+import { connect } from 'react-redux';
+import SingleSelectInput from '../../components/chat/SingleSelectInput';
+import { chatActions } from 'hedvig-redux';
 
 const mapStateToProps = (state, ownProps) => ({
   message: state.chat.messages[ownProps.messageIndex],

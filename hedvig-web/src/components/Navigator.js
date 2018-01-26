@@ -1,17 +1,17 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import { ConnectedRouter, routerMiddleware } from "react-router-redux";
-import createHistory from "history/createBrowserHistory";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 
-import Dialog from "../containers/Dialog";
+import Dialog from '../containers/Dialog';
 
-import Landing from "./Landing";
-import Chat from "../containers/Chat";
-import Offer from "../containers/Offer";
-import AboutUs from "../components/static/AboutUs";
-import Logout from "../components/Logout";
-import FAQ from "./static/FAQ";
-import Legal from "./static/Legal";
+import Landing from './Landing';
+import Chat from '../containers/Chat';
+import Offer from '../containers/Offer';
+import AboutUs from '../components/static/AboutUs';
+import Logout from '../components/Logout';
+import FAQ from './static/FAQ';
+import Legal from './static/Legal';
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -26,7 +26,7 @@ const Navigator = () => (
   <ConnectedRouter history={history}>
     <div
       style={{
-        height: "100%"
+        height: '100%',
       }}
     >
       <Dialog />

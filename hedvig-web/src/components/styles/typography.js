@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Heading1 = styled.span`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   color: ${props => props.theme.colors.webHeading};
 
   @media screen and (max-width: 576px) {
@@ -16,7 +16,7 @@ export const Heading1 = styled.span`
 `;
 
 export const Heading2 = styled.span`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   color: ${props => props.theme.colors.webHeading};
 
   @media screen and (max-width: 576px) {

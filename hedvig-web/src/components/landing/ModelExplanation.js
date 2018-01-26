@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   PurpleHeading,
   LandingComponentSection,
@@ -7,7 +7,7 @@ import {
   HeadingContainer,
   SubItemText,
   HeadingSubText
-} from "../styles/landing";
+} from '../styles/landing';
 
 const Container = LandingComponentSection.extend`
   display: flex;

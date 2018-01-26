@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { Heading2 } from "./typography";
-import Lottie from "react-lottie";
+import styled, { keyframes } from 'styled-components';
+import { Heading2 } from './typography';
+import Lottie from 'react-lottie';
 
 // General
 
@@ -45,7 +45,7 @@ export const SplashStyled = styled.div`
   align-items: flex-start;
   justify-content: center;
   padding-bottom: 75px;
-  background-image: url("/assets/web/splash/backdrop.svg");
+  background-image: url('/assets/web/splash/backdrop.svg');
   background-size: cover;
   height: 1000px;
   padding-top: 3em;

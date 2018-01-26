@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DialogContainerStyle = styled.div`
   text-align: center;
@@ -10,7 +10,7 @@ export const DialogContainerStyle = styled.div`
 `;
 
 export const DialogTitleStyle = styled.div`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   font-size: 24px;
   margin-top: 34px;
   color: ${props => props.theme.colors.black};
@@ -36,7 +36,7 @@ export const DialogButtonStyle = styled.div`
   justify-content: center;
   align-items: center;
   border-top: solid 1px ${props => props.theme.colors.lightGray};
-  border-right: solid ${props => (props.position === "left" ? "1px" : "0px")}
+  border-right: solid ${props => (props.position === 'left' ? '1px' : '0px')}
     ${props => props.theme.colors.lightGray};
   color: ${props => props.theme.colors.purple};
 `;

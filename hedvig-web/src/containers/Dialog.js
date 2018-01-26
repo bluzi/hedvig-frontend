@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import { dialogActions } from "hedvig-redux";
-import Dialog from "../components/Dialog";
+import { connect } from 'react-redux';
+import { dialogActions } from 'hedvig-redux';
+import Dialog from '../components/Dialog';
 
 const mapStateToProps = state => ({
   message: state.dialog.message,

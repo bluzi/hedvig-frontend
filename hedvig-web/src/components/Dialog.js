@@ -1,5 +1,5 @@
-import React from "react";
-import Modal from "react-modal";
+import React from 'react';
+import Modal from 'react-modal';
 
 import {
   DialogContainerStyle,
@@ -7,9 +7,9 @@ import {
   DialogParagraphStyle,
   DialogButtonsContainerStyle,
   DialogButtonStyle
-} from "./styles/dialog";
+} from './styles/dialog';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 export default class Dialog extends React.Component {
   close() {
@@ -32,7 +32,7 @@ export default class Dialog extends React.Component {
       this.props.message.confirmButtonTitle &&
       !this.props.message.dismissButtonTitle
     ) {
-      title = "Ok";
+      title = 'Ok';
     }
     const dismissButton = (
       <DialogButtonStyle
@@ -70,17 +70,17 @@ export default class Dialog extends React.Component {
         onRequestClose={() => this.close()}
         style={{
           overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           },
           content: {
             borderRadius: 8,
             padding: 0,
             minHeight: 200,
-            maxWidth: "80%",
-            position: "absolute"
+            maxWidth: '80%',
+            position: 'absolute',
           }
         }}
         className="__react_modal"

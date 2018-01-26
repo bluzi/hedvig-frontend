@@ -1,5 +1,5 @@
-import React from "react";
-import Lottie from "react-lottie";
+import React from 'react';
+import Lottie from 'react-lottie';
 
 export default class LoadingIndicator extends React.Component {
   render() {

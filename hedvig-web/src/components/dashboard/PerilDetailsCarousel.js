@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Carousel from "../Carousel";
+import Carousel from '../Carousel';
 
 export default class PerilDetails extends React.Component {
   render() {

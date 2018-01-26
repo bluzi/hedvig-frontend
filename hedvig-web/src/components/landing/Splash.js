@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import VisibilitySensor from "react-visibility-sensor";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import VisibilitySensor from 'react-visibility-sensor';
 
-import { TurquoiseRoundedButtonStyled } from "../styles/button";
+import { TurquoiseRoundedButtonStyled } from '../styles/button';
 
 const Container = styled.div`
   display: flex;
@@ -33,15 +33,13 @@ const TextContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   font-weight: 400;
   font-size: 72px;
 `;
 
 class Splash extends React.Component {
-  _change = isVisible => {
-    this.props.ctaVisibilityChanged(isVisible);
-  };
+  _change = isVisible => this.props.ctaVisibilityChanged(isVisible);
 
   render() {
     return (

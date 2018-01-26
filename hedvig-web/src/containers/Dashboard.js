@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import Dashboard from "../components/Dashboard";
+import { connect } from 'react-redux';
+import Dashboard from '../components/Dashboard';
 
-import { insuranceActions, types } from "hedvig-redux";
-import { perilSelected } from "../actions/peril";
+import { insuranceActions, types } from 'hedvig-redux';
+import { perilSelected } from '../actions/peril';
 
 const mapStateToProps = state => ({
   insurance: state.insurance,

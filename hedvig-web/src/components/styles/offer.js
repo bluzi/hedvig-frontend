@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Heading2 } from "./typography";
+import styled from 'styled-components';
+import { Heading2 } from './typography';
 
 export const OfferHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.black};

@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import BankIdCollectInput from "../../components/chat/BankIdCollectInput";
+import { connect } from 'react-redux';
+import BankIdCollectInput from '../../components/chat/BankIdCollectInput';
 
 const mapStateToProps = (state, ownProps) => ({
   message: state.chat.messages[ownProps.messageIndex],

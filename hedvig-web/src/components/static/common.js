@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { TurquoiseRoundedButtonStyled } from "../styles/button";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { TurquoiseRoundedButtonStyled } from '../styles/button';
 
 export const Container = styled.div`
   height: 100%;
@@ -19,7 +19,7 @@ export const Hero = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   color: white;
   font-size: 48px;
   font-weight: 400;
@@ -42,7 +42,7 @@ export const TextRow = styled.div`
 export const TextHeading = styled.h3`
   font-size: 18px;
   font-weight: 800;
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
 
   @media (min-width: 800px) {
     width: 20%;
@@ -60,7 +60,7 @@ export const TextBody = styled.div`
   }
 
   h5 {
-    font-family: "Merriweather";
+    font-family: 'Merriweather';
   }
 `;
 

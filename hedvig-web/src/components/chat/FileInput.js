@@ -1,10 +1,10 @@
-import React from "react";
-import ReactFileReader from "react-file-reader";
-import { WhiteRoundedButton } from "../Button";
+import React from 'react';
+import ReactFileReader from 'react-file-reader';
+import { WhiteRoundedButton } from '../Button';
 
 export default class FileInput extends React.Component {
   handleFiles(file) {
-    console.log("File:", file);
+    console.log('File:', file);
     this.props.upload(this.props.message, file);
   }
 
@@ -14,9 +14,9 @@ export default class FileInput extends React.Component {
         <ReactFileReader handleFiles={this.handleFiles.bind(this)}>
           <WhiteRoundedButton
             style={{
-              cursor: "pointer",
-              backgroundColor: "green",
-              color: "white",
+              cursor: 'pointer',
+              backgroundColor: 'green',
+              color: 'white',
               padding: 5
             }}
           >

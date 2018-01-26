@@ -1,23 +1,23 @@
-import { types } from "hedvig-redux";
+import { types } from 'hedvig-redux';
 
-const TOKEN_KEY = "@hedvig:token";
+const TOKEN_KEY = '@hedvig:token';
 
 export function loadToken() {
   try {
     const value = window.localStorage.getItem(TOKEN_KEY);
-    console.log("Loaded token from LocalStorage:", value);
+    console.log('Loaded token from LocalStorage:', value);
     return value;
   } catch (error) {
-    console.warn("Error loading token", error);
+    console.warn('Error loading token', error);
   }
 }
 
 export function saveToken(token) {
   try {
     window.localStorage.setItem(TOKEN_KEY, token);
-    console.log("Saved token to LocalStorage");
+    console.log('Saved token to LocalStorage');
   } catch (error) {
-    console.warn("Error saving token", error);
+    console.warn('Error saving token', error);
   }
 }
 

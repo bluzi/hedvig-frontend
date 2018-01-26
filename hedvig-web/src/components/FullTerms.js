@@ -1,5 +1,5 @@
-import React from "react";
-import { Placeholder } from "./Styles";
+import React from 'react';
+import { Placeholder } from './Styles';
 
 const FullTerms = () => <Placeholder>Full Terms</Placeholder>;
 

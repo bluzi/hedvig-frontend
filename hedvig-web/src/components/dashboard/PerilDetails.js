@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   border-bottom: solid 1px ${props => props.theme.colors.lightGray};
@@ -13,7 +13,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   font-size: 20px;
   margin-bottom: 16px;
 `;
@@ -25,7 +25,7 @@ export default class PerilDetails extends React.Component {
       <Container>
         <Header>
           <Title>{peril.title}</Title>
-          <div style={{ cursor: "pointer" }} onClick={() => this.props.close()}>
+          <div style={{ cursor: 'pointer' }} onClick={() => this.props.close()}>
             <img src="/assets/icons/close/close_black.svg" alt="cross" />
           </div>
         </Header>

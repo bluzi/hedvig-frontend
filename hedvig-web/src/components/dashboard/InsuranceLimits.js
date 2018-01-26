@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { CenteredColumn } from "../styles/landing";
+import { CenteredColumn } from '../styles/landing';
 import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText,
-} from "../styles/offer";
+} from '../styles/offer';
 
 const Col = styled.td`
   padding: 24px 16px 24px 16px;

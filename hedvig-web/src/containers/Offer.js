@@ -1,9 +1,9 @@
-import { connect } from "react-redux";
-import Offer from "../components/Offer";
+import { connect } from 'react-redux';
+import Offer from '../components/Offer';
 
-import { insuranceActions, eventActions, userActions } from "hedvig-redux";
-import { perilSelected } from "../actions/peril";
-import { navigateTo } from "../services/Navigation";
+import { insuranceActions, eventActions, userActions } from 'hedvig-redux';
+import { perilSelected } from '../actions/peril';
+import { navigateTo } from '../services/Navigation';
 
 const mapStateToProps = state => ({
   insurance: state.insurance,
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(eventActions.event(
         {
           type: 'MODAL_CLOSED',
-          value: 'quote'
+          value: 'quote',
         },
         {
           getMessagesAfter: true,

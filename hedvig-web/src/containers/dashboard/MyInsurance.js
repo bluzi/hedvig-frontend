@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
-import MyInsurance from "../../components/dashboard/MyInsurance";
-import { types } from "hedvig-redux";
-import { navigateTo } from "../../services/Navigation";
+import { connect } from 'react-redux';
+import MyInsurance from '../../components/dashboard/MyInsurance';
+import { types } from 'hedvig-redux';
+import { navigateTo } from '../../services/Navigation';
 
 const mapStateToProps = state => ({
   price: state.insurance.currentTotalPrice,

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Carousel from "./Carousel";
+import Carousel from './Carousel';
 
 export default class CashbackAlternativeDetails extends React.Component {
   cta(cashbackAlternative) {

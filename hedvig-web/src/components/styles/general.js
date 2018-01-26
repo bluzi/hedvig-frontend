@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /*
 Viewport height of 100% is the height after a scroll event, even before you’ve scrolled - making the height too tall initially. This is a WONTFIX in safari:

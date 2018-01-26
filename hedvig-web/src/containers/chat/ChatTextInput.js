@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import ChatTextInput from "../../components/chat/ChatTextInput";
-import { chatActions } from "hedvig-redux";
+import { connect } from 'react-redux';
+import ChatTextInput from '../../components/chat/ChatTextInput';
+import { chatActions } from 'hedvig-redux';
 
 const mapStateToProps = (state, ownProps) => {
   const message = state.chat.messages[ownProps.messageIndex];

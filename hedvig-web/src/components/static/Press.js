@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { LinkStyled, HeroStaticHeading2 } from "../styles/static";
-import { Heading, Paragraph, StaticPage } from "./common";
+import { LinkStyled, HeroStaticHeading2 } from '../styles/static';
+import { Heading, Paragraph, StaticPage } from './common';
 
 const Legal = () => (
   <StaticPage heroContent={<HeroStaticHeading2>Press</HeroStaticHeading2>}>

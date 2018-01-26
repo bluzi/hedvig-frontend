@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Container,
   SayHi,
@@ -6,8 +6,8 @@ import {
   TextRow,
   TextHeading,
   TextBody,
-} from "./common";
-import { Header } from "../Header";
+} from './common';
+import { Header } from '../Header';
 
 const CustomContainer = Container.extend`
   display: flex;

@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Lottie from "react-lottie";
+import React from 'react';
+import styled from 'styled-components';
+import Lottie from 'react-lottie';
 import { CenteredColumn, AbsoluteFadeInParagraph } from '../styles/landing';
-import { WhiteHeading2 } from "../styles/typography";
-import { BlackPurpleRoundedButtonWhiteBorder } from "../Button";
+import { WhiteHeading2 } from '../styles/typography';
+import { BlackPurpleRoundedButtonWhiteBorder } from '../Button';
 
 const MyCenteredColumn = CenteredColumn.extend`
   @media (min-width: 992px) {
@@ -60,7 +60,7 @@ export default class ClaimDemo extends React.Component {
 
   maybeExpanded() {
     return (
-      <div style={{ padding: "2em 0 0" }}>
+      <div style={{ padding: '2em 0 0' }}>
         <MyCenteredColumn>
           <BlackPurpleRoundedButtonWhiteBorder
             onClick={() => this.setState({ expanded: !this.state.expanded })}
@@ -97,7 +97,7 @@ export default class ClaimDemo extends React.Component {
             options={{
               loop: true,
               autoplay: true,
-              animationData: require("../../bundledAssets/animations/claims_demo.json")
+              animationData: require('../../bundledAssets/animations/claims_demo.json')
             }}
             height={610}
             width={352}

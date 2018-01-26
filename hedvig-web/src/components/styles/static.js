@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Heading2 } from "./typography";
+import styled from 'styled-components';
+import { Heading2 } from './typography';
 
 export const StaticHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.blackPurple};
@@ -44,7 +44,7 @@ export const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url("https://picsum.photos/g/950/670");
+  background-image: url('https://picsum.photos/g/950/670');
   background-size: cover;
   background-repeat: no-repeat;
 `;

@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { HeaderStyled, HeaderIconStyled } from "./styles/header";
-import { TurquoiseRoundedButtonStyled } from "./styles/button";
-import { ResetIconButton } from "./Button";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { HeaderStyled, HeaderIconStyled } from './styles/header';
+import { TurquoiseRoundedButtonStyled } from './styles/button';
+import { ResetIconButton } from './Button';
 
 const HeaderLinkContainer = styled.div`
   display: flex;

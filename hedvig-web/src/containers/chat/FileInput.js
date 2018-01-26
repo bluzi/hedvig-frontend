@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import FileInput from "../../components/chat/FileInput";
-import { chatActions, uploadActions } from "hedvig-redux";
+import { connect } from 'react-redux';
+import FileInput from '../../components/chat/FileInput';
+import { chatActions, uploadActions } from 'hedvig-redux';
 
 const mapStateToProps = (state, ownProps) => {
   const message = state.chat.messages[ownProps.messageIndex];

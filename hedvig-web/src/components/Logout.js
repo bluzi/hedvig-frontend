@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { types } from "hedvig-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { types } from 'hedvig-redux';
 
 class Logout extends React.Component {
   componentWillMount() {

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Divider, PassiveText } from "../styles/offer";
-import PerilDetails from "./PerilDetails";
+import { Divider, PassiveText } from '../styles/offer';
+import PerilDetails from './PerilDetails';
 
 const Container = styled.div`
   width: 100%;
@@ -45,7 +45,7 @@ const CategoryTitleContainer = styled.div`
 `;
 
 const CategoryTitle = styled.span`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   font-size: 20px;
   margin-left: 20px;
 `;
@@ -69,7 +69,7 @@ const PerilsContainer = styled.div`
 
 const Category = ({
   data,
-  perilSelected = (p, d) => console.log("Peril", p, "clicked in category", d),
+  perilSelected = (p, d) => console.log('Peril', p, 'clicked in category', d),
   category,
   initialPerilIndex
 }) => {
@@ -95,7 +95,7 @@ const Category = ({
       <PerilsContainer>
         {data.perils.map(p => (
           <div
-            style={{ cursor: "pointer" }}
+            style={{ cursor: 'pointer' }}
             onClick={() => perilSelected(p, data)}
             key={p.id}
           >

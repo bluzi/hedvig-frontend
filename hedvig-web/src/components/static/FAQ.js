@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Hero, Heading, SayHi } from "./common";
-import { Header } from "../Header";
+import { Container, Hero, Heading, SayHi } from './common';
+import { Header } from '../Header';
 
 const FAQ = () => (
   <Container>

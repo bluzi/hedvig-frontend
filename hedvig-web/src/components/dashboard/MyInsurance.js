@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { CenteredColumn } from "../styles/landing";
+import { CenteredColumn } from '../styles/landing';
 import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText,
   Divider
-} from "../styles/offer";
-import { TurquoiseRoundedButtonStyled } from "../styles/button";
+} from '../styles/offer';
+import { TurquoiseRoundedButtonStyled } from '../styles/button';
 
 const Container = OfferComponentSection.extend`
   background-color: ${props => props.theme.colors.purple};
@@ -48,10 +48,10 @@ const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
   let maybeHeading;
   if (showHeading) {
     maybeHeading = (
-      <div style={{ width: "100%" }}>
-        <div style={{ margin: "17px 0px" }}>
+      <div style={{ width: '100%' }}>
+        <div style={{ margin: '17px 0px' }}>
           <OfferHeading2>Min hemförsäkring</OfferHeading2>
-          <PassiveText style={{ display: "block", marginBottom: 23 }}>
+          <PassiveText style={{ display: 'block', marginBottom: 23 }}>
             {address}
           </PassiveText>
         </div>
@@ -64,12 +64,12 @@ const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
     <Container>
       <MyCenteredColumn>
         {maybeHeading}
-        <div style={{ width: "100%", padding: "24px" }}>
+        <div style={{ width: '100%', padding: '24px' }}>
           <PriceText>{price} kr/mån</PriceText>
           <BindingTimeText>Ingen bindningstid</BindingTimeText>
         </div>
         <Divider />
-        <div style={{ width: "100%", padding: "24px" }}>
+        <div style={{ width: '100%', padding: '24px' }}>
           <PassiveTextWithImage>
             <img
               style={{ marginRight: 5 }}
@@ -91,8 +91,8 @@ const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
           Bli försäkrad
         </TurquoiseRoundedButtonStyled>
         <div style={{ marginTop: 24, marginBottom: 40 }}>
-          <PassiveTextWithImage style={{ cursor: "pointer" }}>
-            Försäkringsvillkor (PDF){" "}
+          <PassiveTextWithImage style={{ cursor: 'pointer' }}>
+            Försäkringsvillkor (PDF){' '}
             <img
               style={{ marginLeft: 5 }}
               src="/assets/icons/my_insurance/right-arrow.svg"

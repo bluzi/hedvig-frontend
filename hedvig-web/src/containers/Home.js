@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import Home from "../components/Home";
-import { helloActions } from "hedvig-redux";
+import { connect } from 'react-redux';
+import Home from '../components/Home';
+import { helloActions } from 'hedvig-redux';
 
 const mapStateToProps = state => ({
   state

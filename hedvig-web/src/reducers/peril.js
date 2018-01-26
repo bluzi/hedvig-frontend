@@ -1,4 +1,4 @@
-import { PERIL_SELECTED } from "../actions/peril";
+import { PERIL_SELECTED } from '../actions/peril';
 
 const reducer = (
   state = {

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const slideFromRight = keyframes`
   from {
@@ -12,7 +12,7 @@ const slideFromRight = keyframes`
 `;
 
 export const ButtonStyled = styled.button`
-  font-family: "Circular Std Book";
+  font-family: 'Circular Std Book';
   font-size: 18px;
   line-height: 22px;
   padding: 12px 24px;
@@ -86,8 +86,8 @@ const iconSizes = {
 export const IconButtonStyled = RoundedButtonStyled.extend`
   border: none;
   padding: 0px;
-  width: ${props => iconSizes[props.size || "big"]}px;
-  height: ${props => iconSizes[props.size || "big"]}px;
+  width: ${props => iconSizes[props.size || 'big']}px;
+  height: ${props => iconSizes[props.size || 'big']}px;
   background-image: url(${props => props.iconUrl});
 `;
 

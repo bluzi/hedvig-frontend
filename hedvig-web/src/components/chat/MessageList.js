@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {
   StyledMessage,
   MessageContainerStyled,
   StyledUserMessage,
 } from '../styles/chat';
-import EditMessageButton from "../../containers/chat/EditMessageButton";
-import Avatar from "../../containers/chat/Avatar";
-import LoadingIndicator from "../../containers/chat/LoadingIndicator";
+import EditMessageButton from '../../containers/chat/EditMessageButton';
+import Avatar from '../../containers/chat/Avatar';
+import LoadingIndicator from '../../containers/chat/LoadingIndicator';
 
 const DefaultHedvigMessage = ({ message, textAlign }) => (
   <MessageContainerStyled>
@@ -16,7 +16,7 @@ const DefaultHedvigMessage = ({ message, textAlign }) => (
 );
 
 const DefaultUserMessageStyle = StyledUserMessage.extend`
-  margin-right: ${props => (props.editAllowed ? "10px" : "0px")};
+  margin-right: ${props => (props.editAllowed ? '10px' : '0px')};
 `;
 
 const DefaultUserMessage = ({ message, textAlign }) => (
@@ -89,7 +89,7 @@ export default class MessageList extends React.Component {
   scrollToBottom = () => {
     if (this.messagesEnd) {
       const node = ReactDOM.findDOMNode(this.messagesEnd);
-      node.scrollIntoView({ behavior: "smooth" });
+      node.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -111,7 +111,7 @@ export default class MessageList extends React.Component {
         </MessageContainerStyled>
         {/* A div that comes at the bottom of the content, that we always scroll to */}
         <div
-          style={{ float: "left", clear: "both" }}
+          style={{ float: 'left', clear: 'both' }}
           ref={el => {
             this.messagesEnd = el;
           }}

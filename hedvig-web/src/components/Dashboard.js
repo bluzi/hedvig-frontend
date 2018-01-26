@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Modal from "react-modal";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-import TabBar from "./TabBar";
-import Category from "../containers/dashboard/Category";
-import MyInsurance from "./dashboard/MyInsurance";
-import InsuranceLimits from "./dashboard/InsuranceLimits";
-import PerilDetails from "./dashboard/PerilDetails";
-import Footer from "../components/Footer";
+import TabBar from './TabBar';
+import Category from '../containers/dashboard/Category';
+import MyInsurance from './dashboard/MyInsurance';
+import InsuranceLimits from './dashboard/InsuranceLimits';
+import PerilDetails from './dashboard/PerilDetails';
+import Footer from '../components/Footer';
 
 export default class Dashboard extends React.Component {
   categories() {
@@ -25,7 +25,7 @@ export default class Dashboard extends React.Component {
           onRequestClose={this.props.closePerilModal}
         >
           <div
-            style={{ cursor: "pointer" }}
+            style={{ cursor: 'pointer' }}
             onClick={() => this.props.closePerilModal()}
           >
             Close

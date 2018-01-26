@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Modal from "react-modal";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-import TabBar from "./TabBar";
-import Footer from "./Footer";
-import CashbackAlternativeDetails from "../containers/CashbackAlternativeDetails";
-import styled from "styled-components";
+import TabBar from './TabBar';
+import Footer from './Footer';
+import CashbackAlternativeDetails from '../containers/CashbackAlternativeDetails';
+import styled from 'styled-components';
 
 const Row = styled.div`
   padding: 10px;
@@ -39,7 +39,7 @@ export default class Profile extends React.Component {
           onRequestClose={() => this.closeCashbackModal()}
         >
           <div
-            style={{ cursor: "pointer" }}
+            style={{ cursor: 'pointer' }}
             onClick={() => this.closeCashbackModal()}
           >
             Close
@@ -50,12 +50,12 @@ export default class Profile extends React.Component {
         <Link to="/chat">DEBUG: Chat</Link>
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            backgroundColor: "#F9FAFC",
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            backgroundColor: '#F9FAFC',
             padding: 10,
-            cursor: "pointer"
+            cursor: 'pointer',
           }}
           onClick={() => this.setState({ cashbackModalShowing: true })}
         >
@@ -77,11 +77,11 @@ export default class Profile extends React.Component {
           <div>
             {user.age} år · {user.address}
           </div>
-          <div>{user.familyMembers.join(", ")}</div>
+          <div>{user.familyMembers.join(', ')}</div>
         </Row>
         <Row>
           <div>Trygghetshöjare</div>
-          <div>{user.safetyIncreasers.join(", ")}</div>
+          <div>{user.safetyIncreasers.join(', ')}</div>
         </Row>
         <Row>
           <div>Bankkonto</div>

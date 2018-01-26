@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const slideFromLeft = keyframes`
   from {
@@ -12,7 +12,7 @@ const slideFromLeft = keyframes`
 `;
 
 export const StyledUserMessage = styled.div`
-  font-family: "Circular Std Book";
+  font-family: 'Circular Std Book';
   background-color: ${props => props.theme.colors.purple};
   color: ${props => props.theme.colors.white};
   border-radius: 24px;
@@ -24,7 +24,7 @@ export const StyledUserMessage = styled.div`
 `;
 
 export const StyledMessage = styled.div`
-  font-family: "Merriweather";
+  font-family: 'Merriweather';
   background-color: ${props => props.theme.colors.hedvigMessageBackground};
   color: ${props => props.theme.colors.blackPurple};
   border-radius: 8px;
@@ -117,11 +117,11 @@ export const InputAreaStyled = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   padding-top: 20px;
-  ${"" /* margin-bottom: 117px; */};
+  ${''};
 `;
 
 export const TextInputStyled = styled.input`
-  font-family: "Circular Std Book";
+  font-family: 'Circular Std Book';
   font-size: 16px;
   line-height: 24px;
   border: 1px solid ${props => props.theme.colors.darkGray};
@@ -130,7 +130,7 @@ export const TextInputStyled = styled.input`
   color: ${props => props.theme.colors.black};
   padding: 7px 20px;
   appearance: none;
-  &[type="number"]::-webkit-inner-spin-button {
+  &[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
 `;

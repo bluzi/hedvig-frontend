@@ -17,6 +17,7 @@
   "rules": {
     "no-undef": "error",
     "jsx-a11y/href-no-hash": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": "off"
   }
 }

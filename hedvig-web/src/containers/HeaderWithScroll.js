@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
-import { HeaderWithScroll } from "../components/Header";
-import { types, eventActions } from "hedvig-redux";
-import { navigateTo } from "../services/Navigation";
+import { connect } from 'react-redux';
+import { HeaderWithScroll } from '../components/Header';
+import { types, eventActions } from 'hedvig-redux';
+import { navigateTo } from '../services/Navigation';
 
 const mapStateToProps = state => ({
   scrollY: state.scroll.scrollY,
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(eventActions.event(
         {
           type: 'MODAL_CLOSED',
-          value: 'quote'
+          value: 'quote',
         },
         {
           getMessagesAfter: true,
