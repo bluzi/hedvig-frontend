@@ -1,37 +1,38 @@
-import React from 'react'
+import React from 'react';
 
-import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-import { Provider } from 'react-redux'
-import { configureStore, chatActions, dialogActions } from 'hedvig-redux'
+import { Provider } from 'react-redux';
+import { configureStore, chatActions, dialogActions } from 'hedvig-redux';
 
-import { MemoryRouter } from 'react-router'
+import { MemoryRouter } from 'react-router';
 
-import { theme } from 'hedvig-style'
-import { ThemeProvider } from 'styled-components'
+import { theme } from 'hedvig-style';
+import { ThemeProvider } from 'styled-components';
 
-import * as TokenStorage from '../services/TokenStorage'
-import { tokenStorageSaga } from '../sagas/TokenStorage'
-import Chat from '../containers/Chat'
-import Offer from '../containers/Offer'
-import Dashboard from '../containers/Dashboard'
-import Landing from '../components/Landing'
-import PerilDetailsCarousel from '../components/dashboard/PerilDetailsCarousel'
-import PerilDetails from '../components/dashboard/PerilDetails'
-import CashbackAlternativeDetails from '../containers/CashbackAlternativeDetails'
-import Profile from '../containers/Profile'
-import Dialog from '../containers/Dialog'
-import { ButtonsExample } from '../components/Button'
+import * as TokenStorage from '../services/TokenStorage';
+import { tokenStorageSaga } from '../sagas/TokenStorage';
+import Chat from '../containers/Chat';
+import Offer from '../containers/Offer';
+import Dashboard from '../containers/Dashboard';
+import Landing from '../components/Landing';
+import PerilDetailsCarousel from '../components/dashboard/PerilDetailsCarousel';
+import PerilDetails from '../components/dashboard/PerilDetails';
+import CashbackAlternativeDetails from '../containers/CashbackAlternativeDetails';
+import Profile from '../containers/Profile';
+import Dialog from '../containers/Dialog';
+import { ButtonsExample } from '../components/Button';
 
-import scrollPositionReducer from '../reducers/scrollPosition'
-import { scrollY } from '../actions/scroll'
+import scrollPositionReducer from '../reducers/scrollPosition';
+import { scrollY } from '../actions/scroll';
 
-import perilReducer from '../reducers/peril'
+import perilReducer from '../reducers/peril';
 
-import Avatar from '../components/chat/Avatar'
+import Avatar from '../components/chat/Avatar';
 
 const R = require('ramda');
+
 window.R = R;
 
 /*
@@ -95,7 +96,7 @@ const mockMessages = {
     },
     timestamp: '2017-11-07T14:02:43.225Z'
   },
-  '2155': {
+  2155: {
     globalId: 2155,
     id: 'message.begin',
     header: {
@@ -156,7 +157,7 @@ const mockMessages = {
   //     date: "2013-02-04T22:44:30.652Z"
   //   }
   // },
-  '2158': {
+  2158: {
     id: 'message.hello',
     timestamp: 2158,
     header: {
@@ -363,7 +364,7 @@ storiesOf('Profile', module)
       ],
     });
     return (
-      <StorybookProvider store={profileStore}>{story()}</StorybookProvider>;
+      <StorybookProvider store={profileStore}>{story()}</StorybookProvider>
     );
   })
   .add('Profile', () => <Profile />);
@@ -444,13 +445,13 @@ storiesOf('Landing', module)
     TokenStorage.getOrLoadToken(landingStore.dispatch);
     // landingStore.dispatch({ type: "LOADED_MESSAGES", payload: mockMessages })
     return (
-      <StorybookProvider store={landingStore}>{story()}</StorybookProvider>;
+      <StorybookProvider store={landingStore}>{story()}</StorybookProvider>
     );
   })
   .add('Landing', () => <Landing />);
 
 storiesOf('Buttons', module)
-  .addDecorator((story) => <ThemeProvider theme={theme}>{story()}</ThemeProvider>)
+  .addDecorator(story => <ThemeProvider theme={theme}>{story()}</ThemeProvider>)
   .add('ButtonsExample', () => <ButtonsExample />);
 
 storiesOf('Avatar', module).add('Avatar', () => {
