@@ -1,42 +1,43 @@
-import React from "react"
+import React from "react";
 import {
   StyledOptionContainer,
   OptionsContainerStyled,
   WrappedOptionsContainerStyled
-} from "../styles/chat"
+} from "../styles/chat";
 import {
   WhiteRoundedButton,
   PurpleRoundedButton,
   SendIconButton,
   InactiveSendIconButton
-} from "../Button"
-const R = require("ramda")
+} from "../Button";
+
+const R = require("ramda");
 
 const MultipleSelectInput = ({ message, onChoiceSelected, done }) => {
-  let opts = message.body.choices.map(choice => {
-    let ButtonComponent = choice.selected
+  const opts = message.body.choices.map(choice => {
+    const ButtonComponent = choice.selected
       ? PurpleRoundedButton
-      : WhiteRoundedButton
+      : WhiteRoundedButton;
     return (
       <StyledOptionContainer>
         <ButtonComponent
           key={choice.text}
           onClick={() => {
-            onChoiceSelected(message, choice)
+            onChoiceSelected(message, choice);
           }}
         >
           {choice.text}
         </ButtonComponent>
       </StyledOptionContainer>
-    )
-  })
-  let Container =
-    opts.length <= 4 ? OptionsContainerStyled : WrappedOptionsContainerStyled
-  let SendButton = R.any(choice => choice.selected, message.body.choices) ? (
+    );
+  });
+  const Container =
+    opts.length <= 4 ? OptionsContainerStyled : WrappedOptionsContainerStyled;
+  const SendButton = R.any(choice => choice.selected, message.body.choices) ? (
     <SendIconButton onClick={() => done(message)} />
   ) : (
     <InactiveSendIconButton />
-  )
+  );
   return (
     <div
       style={{
@@ -48,7 +49,7 @@ const MultipleSelectInput = ({ message, onChoiceSelected, done }) => {
       <Container>{opts}</Container>
       {SendButton}
     </div>
-  )
-}
+  );
+};
 
-export default MultipleSelectInput
+export default MultipleSelectInput;

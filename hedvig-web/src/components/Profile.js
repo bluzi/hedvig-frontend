@@ -1,36 +1,36 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import Modal from "react-modal"
+import React from "react";
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
-import TabBar from "./TabBar"
-import Footer from "./Footer"
-import CashbackAlternativeDetails from "../containers/CashbackAlternativeDetails"
-import styled from "styled-components"
+import TabBar from "./TabBar";
+import Footer from "./Footer";
+import CashbackAlternativeDetails from "../containers/CashbackAlternativeDetails";
+import styled from "styled-components";
 
 const Row = styled.div`
   padding: 10px;
   border-bottom: solid 1px black;
-`
+`;
 
 export default class Profile extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       cashbackModalShowing: false
-    }
+    };
   }
 
   componentWillMount() {
-    this.props.getUser()
-    this.props.getCashbackAlternatives()
+    this.props.getUser();
+    this.props.getCashbackAlternatives();
   }
 
   closeCashbackModal() {
-    this.setState({ cashbackModalShowing: false })
+    this.setState({ cashbackModalShowing: false });
   }
 
   render() {
-    let { user } = this.props
+    const { user } = this.props;
     return (
       <div>
         <Modal
@@ -89,6 +89,6 @@ export default class Profile extends React.Component {
         </Row>
         <Footer />
       </div>
-    )
+    );
   }
 }

@@ -1,38 +1,38 @@
-import React from "react"
+import React from "react";
 
 export default class Carousel extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       selectedIndex: 0
-    }
+    };
   }
 
   changeSelectedIndex(delta) {
-    let nextIndex = this.state.selectedIndex + delta
+    const nextIndex = this.state.selectedIndex + delta;
     if (nextIndex >= 0 && nextIndex < this.props.items.length) {
       this.setState({
         selectedIndex: nextIndex
-      })
+      });
     }
   }
 
   componentDidMount() {
     if (this.props.initialIndex) {
-      this.setState({ selectedIndex: this.props.initialIndex })
+      this.setState({ selectedIndex: this.props.initialIndex });
     }
   }
 
   canGoLeft() {
-    return this.selectedIndex > 0
+    return this.selectedIndex > 0;
   }
 
   canGoRight() {
-    return this.selectedIndex < this.props.items.length - 1
+    return this.selectedIndex < this.props.items.length - 1;
   }
 
   render() {
-    let item = this.props.items[this.state.selectedIndex]
+    const item = this.props.items[this.state.selectedIndex];
 
     return (
       <div>
@@ -43,6 +43,6 @@ export default class Carousel extends React.Component {
           changeSelectedIndex: this.changeSelectedIndex.bind(this)
         })}
       </div>
-    )
+    );
   }
 }

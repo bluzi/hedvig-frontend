@@ -1,8 +1,6 @@
-import React from "react"
-import { Placeholder } from "./Styles"
+import React from "react";
+import { Placeholder } from "./Styles";
 
-const FullTerms = () => {
-  return <Placeholder>Full Terms</Placeholder>
-}
+const FullTerms = () => <Placeholder>Full Terms</Placeholder>;
 
-export default FullTerms
+export default FullTerms;

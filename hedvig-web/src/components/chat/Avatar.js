@@ -1,5 +1,5 @@
-import React from "react"
-import Lottie from "react-lottie"
+import React from "react";
+import Lottie from "react-lottie";
 
 export default class Avatar extends React.Component {
   render() {
@@ -11,24 +11,23 @@ export default class Avatar extends React.Component {
             marginBottom: 20,
             marginLeft: 50,
             height: this.props.avatar.height,
-            width: this.props.avatar.width
+            width: this.props.avatar.width,
           }}
         >
           <Lottie
             options={{
               loop: false,
               autoplay: true,
-              animationData: this.props.avatar.data
+              animationData: this.props.avatar.data,
             }}
             height={this.props.avatar.height}
             width={this.props.avatar.width}
           />
         </div>
-      )
-    } else {
-      // TODO: Show a loader here if necessary?
-      // return <Text>Loading...</Text>
-      return null
+      );
     }
+    // TODO: Show a loader here if necessary?
+    // return <Text>Loading...</Text>
+    return null;
   }
 }

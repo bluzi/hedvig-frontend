@@ -1,17 +1,14 @@
-import { connect } from "react-redux"
-import Category from "../../components/dashboard/Category"
-import { perilSelected } from "../../actions/peril"
+import { connect } from "react-redux";
+import Category from "../../components/dashboard/Category";
+import { perilSelected } from "../../actions/peril";
 
-const mapStateToProps = state => {
-  return {}
-}
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    perilSelected: (peril, category) => dispatch(perilSelected(peril, category))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  perilSelected: (peril, category) => dispatch(perilSelected(peril, category)),
+});
 
-const CategoryContainer = connect(mapStateToProps, mapDispatchToProps)(Category)
+const CategoryContainer = connect(mapStateToProps, mapDispatchToProps)(Category,
+);
 
-export default CategoryContainer
+export default CategoryContainer;

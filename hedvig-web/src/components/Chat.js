@@ -1,31 +1,31 @@
-import React from "react"
+import React from "react";
 
-import MessageList from "../containers/chat/MessageList"
-import ChatNumberInput from "../containers/chat/ChatNumberInput"
-import ChatTextInput from "../containers/chat/ChatTextInput"
-import DateInput from "../containers/chat/DateInput"
-import MultipleSelectInput from "../containers/chat/MultipleSelectInput"
-import SingleSelectInput from "../containers/chat/SingleSelectInput"
-import BankIdCollectInput from "../containers/chat/BankIdCollectInput"
-import ParagraphInput from "../containers/chat/ParagraphInput"
-import FileInput from "../containers/chat/FileInput"
-import { Header } from "../components/Header"
+import MessageList from "../containers/chat/MessageList";
+import ChatNumberInput from "../containers/chat/ChatNumberInput";
+import ChatTextInput from "../containers/chat/ChatTextInput";
+import DateInput from "../containers/chat/DateInput";
+import MultipleSelectInput from "../containers/chat/MultipleSelectInput";
+import SingleSelectInput from "../containers/chat/SingleSelectInput";
+import BankIdCollectInput from "../containers/chat/BankIdCollectInput";
+import ParagraphInput from "../containers/chat/ParagraphInput";
+import FileInput from "../containers/chat/FileInput";
+import { Header } from "../components/Header";
 
 import {
   ChatAreaStyled,
   MessageAreaStyled,
   InputAreaStyled
-} from "./styles/chat"
-import { ResetIconButton } from "./Button"
-import { FullHeight } from "./styles/general"
+} from "./styles/chat";
+import { ResetIconButton } from "./Button";
+import { FullHeight } from "./styles/general";
 
 const getInputComponent = function(messages) {
   if (messages.length === 0) {
-    return null
+    return null;
   }
-  let lastIndex = messages.length - 1
-  let lastMessage = messages[lastIndex]
-  let lastMessageType = lastMessage.body.type
+  const lastIndex = messages.length - 1;
+  const lastMessage = messages[lastIndex];
+  const lastMessageType = lastMessage.body.type;
   return {
     multiple_select: <MultipleSelectInput messageIndex={lastIndex} />,
     text: <ChatTextInput messageIndex={lastIndex} />,
@@ -35,12 +35,12 @@ const getInputComponent = function(messages) {
     bankid_collect: <BankIdCollectInput messageIndex={lastIndex} />,
     paragraph: <ParagraphInput messageIndex={lastIndex} />,
     file: <FileInput messageIndex={lastIndex} />
-  }[lastMessageType]
-}
+  }[lastMessageType];
+};
 
 export default class Chat extends React.Component {
   componentDidMount() {
-    this.props.getMessages()
+    this.props.getMessages();
   }
 
   render() {
@@ -52,8 +52,8 @@ export default class Chat extends React.Component {
           }
         />
         <ChatAreaStyled>
-          <div style={{overflow: "hidden", height: "100%", minHeight: 0}}>
-            <MessageAreaStyled style={{width: "100%", height: "100%"}}>
+          <div style={{ overflow: "hidden", height: "100%", minHeight: 0 }}>
+            <MessageAreaStyled style={{ width: "100%", height: "100%" }}>
               <MessageList />
             </MessageAreaStyled>
           </div>
@@ -63,6 +63,6 @@ export default class Chat extends React.Component {
           </InputAreaStyled>
         </ChatAreaStyled>
       </FullHeight>
-    )
+    );
   }
 }

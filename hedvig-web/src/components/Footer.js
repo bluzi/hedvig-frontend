@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import { FooterIconStyled } from "./styles/footer"
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { FooterIconStyled } from "./styles/footer";
 
 const Container = styled.div`
   display: flex;
@@ -19,8 +19,7 @@ const Container = styled.div`
     justify-content: space-between;
     padding: 3em 1.5em;
   }
-  
-`
+`;
 
 const SocialContainer = styled.div`
   display: flex !important;
@@ -32,7 +31,7 @@ const SocialContainer = styled.div`
   img:first-of-type {
     margin-right: 40px;
   }
-`
+`;
 
 const LeftContainer = styled.div`
   display: flex;
@@ -43,12 +42,12 @@ const LeftContainer = styled.div`
     min-width: 500px;
     justify-content: space-around;
   }
-`
+`;
 
 const RouteLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const RightContainer = styled.div`
   padding: 1.5em 0 0;
@@ -56,7 +55,7 @@ const RightContainer = styled.div`
   @media (min-width: 800px) {
     padding: 0;
   }
-`
+`;
 
 export default class Footer extends React.Component {
   render() {
@@ -66,24 +65,16 @@ export default class Footer extends React.Component {
           <FooterIconStyled />
           <RouteLinkContainer>
             <div>
-              <Link to="/contact">
-                Kontakt
-              </Link>
+              <Link to="/contact">Kontakt</Link>
             </div>
             <div>
-              <Link to="/careers">
-                Karriär
-              </Link>
+              <Link to="/careers">Karriär</Link>
             </div>
             <div>
-              <Link to="/terms">
-                Försäkringsvillkor
-              </Link>
+              <Link to="/terms">Försäkringsvillkor</Link>
             </div>
             <div>
-              <Link to="/legal">
-                Legal information
-              </Link>
+              <Link to="/legal">Legal information</Link>
             </div>
           </RouteLinkContainer>
         </LeftContainer>
@@ -122,6 +113,6 @@ export default class Footer extends React.Component {
           </SocialContainer>
         </RightContainer>
       </Container>
-    )
+    );
   }
 }

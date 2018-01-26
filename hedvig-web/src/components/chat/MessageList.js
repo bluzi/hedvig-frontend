@@ -1,109 +1,108 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { StyledMessage, MessageContainerStyled, StyledUserMessage } from "../styles/chat"
-import EditMessageButton from "../../containers/chat/EditMessageButton"
-import Avatar from "../../containers/chat/Avatar"
-import LoadingIndicator from "../../containers/chat/LoadingIndicator"
+import React from "react";
+import ReactDOM from "react-dom";
+import {
+  StyledMessage,
+  MessageContainerStyled,
+  StyledUserMessage,
+} from '../styles/chat';
+import EditMessageButton from "../../containers/chat/EditMessageButton";
+import Avatar from "../../containers/chat/Avatar";
+import LoadingIndicator from "../../containers/chat/LoadingIndicator";
 
-const DefaultHedvigMessage = ({ message, textAlign }) => {
-  return (
-    <MessageContainerStyled>
-      <StyledMessage style={{ textAlign }}>{message.body.text}</StyledMessage>
-    </MessageContainerStyled>
-  )
-}
+const DefaultHedvigMessage = ({ message, textAlign }) => (
+  <MessageContainerStyled>
+    <StyledMessage style={{ textAlign }}>{message.body.text}</StyledMessage>
+  </MessageContainerStyled>
+);
 
 const DefaultUserMessageStyle = StyledUserMessage.extend`
   margin-right: ${props => (props.editAllowed ? "10px" : "0px")};
-`
+`;
 
-const DefaultUserMessage = ({ message, textAlign }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center"
-      }}
-    >
-      <DefaultUserMessageStyle editAllowed={message.header.editAllowed}>
-        {message.body.text}
-      </DefaultUserMessageStyle>
-      {message.header.editAllowed ? <EditMessageButton /> : null}
-    </div>
-  )
-}
+const DefaultUserMessage = ({ message, textAlign }) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center'
+    }}
+  >
+    <DefaultUserMessageStyle editAllowed={message.header.editAllowed}>
+      {message.body.text}
+    </DefaultUserMessageStyle>
+    {message.header.editAllowed ? <EditMessageButton /> : null}
+  </div>
+);
 
-const UserMessageMapping = {}
+const UserMessageMapping = {};
 
 const HedvigMessageMapping = {
   // hero: HeroMessage,
   bankid_collect: () => null // <-- This is how to not render certain types of messages from Hedvig
-}
+};
 
-const renderMessage = function(message, idx, isLastMessage) {
-  let fromMe = message.header.fromId !== 1
-  let flexDirection = fromMe ? "row-reverse" : "row"
-  let alignSelf = fromMe ? "flex-end" : "flex-start"
-  let textAlign = fromMe ? "right" : "left"
+const renderMessage = function (message, idx, isLastMessage) {
+  const fromMe = message.header.fromId !== 1;
+  const flexDirection = fromMe ? 'row-reverse' : 'row';
+  const alignSelf = fromMe ? 'flex-end' : 'flex-start';
+  const textAlign = fromMe ? 'right' : 'left';
 
   let MessageRenderComponent = fromMe
     ? DefaultUserMessage
-    : DefaultHedvigMessage
+    : DefaultHedvigMessage;
   if (fromMe && UserMessageMapping.hasOwnProperty(message.body.type)) {
-    MessageRenderComponent = UserMessageMapping[message.body.type]
+    MessageRenderComponent = UserMessageMapping[message.body.type];
   } else if (
     !fromMe &&
     HedvigMessageMapping.hasOwnProperty(message.body.type)
   ) {
-    MessageRenderComponent = HedvigMessageMapping[message.body.type]
+    MessageRenderComponent = HedvigMessageMapping[message.body.type];
   }
 
-  if (message.body.text !== "") {
+  if (message.body.text !== '') {
     return (
       <div key={message.globalId || idx}>
         {isLastMessage ? <Avatar messageIndex={idx} /> : null}
         <div
           style={{
-            display: "flex",
+            display: 'flex',
             marginBottom: 20,
-            flexDirection: flexDirection,
-            alignSelf: alignSelf
+            flexDirection,
+            alignSelf
           }}
         >
           <MessageRenderComponent message={message} textAlign={textAlign} />
         </div>
       </div>
-    )
-  } else {
-    return null
+    );
   }
-}
+  return null;
+};
 
 const renderMessages = function(messages) {
   return messages.map((msg, idx) =>
     renderMessage(msg, idx, idx === messages.length - 1)
-  )
-}
+  );
+};
 
 export default class MessageList extends React.Component {
   scrollToBottom = () => {
     if (this.messagesEnd) {
-      const node = ReactDOM.findDOMNode(this.messagesEnd)
-      node.scrollIntoView({ behavior: "smooth" })
+      const node = ReactDOM.findDOMNode(this.messagesEnd);
+      node.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   componentWillMount() {
     this.props.onScrollToBottomEvent(() => {
-      setTimeout(() => this.scrollToBottom(), 200)
-    })
+      setTimeout(() => this.scrollToBottom(), 200);
+    });
   }
 
   // TODO: Deregister listener on componentWillUnmount
 
   render() {
-    let messages = this.props.messages
+    const messages = this.props.messages;
     return (
       <React.Fragment>
         {renderMessages(messages)}
@@ -114,10 +113,10 @@ export default class MessageList extends React.Component {
         <div
           style={{ float: "left", clear: "both" }}
           ref={el => {
-            this.messagesEnd = el
+            this.messagesEnd = el;
           }}
         />
       </React.Fragment>
-    )
+    );
   }
 }

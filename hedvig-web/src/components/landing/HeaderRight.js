@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "react-router-dom"
-import { PurpleRoundedButton } from "../Button"
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { PurpleRoundedButton } from "../Button";
 
 const Container = styled.div`
   display: flex;
@@ -22,22 +22,20 @@ const Container = styled.div`
   .text-link {
     color: ${props => props.theme.colors.purple};
   }
-`
+`;
 
-const HeaderRight = () => {
-  return (
-    <Container>
-      <Link to="/about-us" className="text-link">
-        Om Hedvig
-      </Link>
-      <Link to="/faq" className="text-link">
-        FAQ
-      </Link>
-      <Link to="/chat">
-        <PurpleRoundedButton>Anmäl en skada</PurpleRoundedButton>
-      </Link>
-    </Container>
-  )
-}
+const HeaderRight = () => (
+  <Container>
+    <Link to="/about-us" className="text-link">
+      Om Hedvig
+    </Link>
+    <Link to="/faq" className="text-link">
+      FAQ
+    </Link>
+    <Link to="/chat">
+      <PurpleRoundedButton>Anmäl en skada</PurpleRoundedButton>
+    </Link>
+  </Container>
+);
 
-export default HeaderRight
+export default HeaderRight;

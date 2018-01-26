@@ -1,25 +1,25 @@
-import React, { Component } from "react"
-import { Provider } from "react-redux"
-import { routerReducer } from "react-router-redux"
-import { Navigator, routerMiddleware } from "./components/Navigator"
-import * as Navigation from "./services/Navigation"
-import { theme } from "hedvig-style"
-import { ThemeProvider } from "styled-components"
-import { getOrLoadToken } from "./services/TokenStorage"
-import * as hedvigRedux from "hedvig-redux"
-import moment from "moment"
-import { tokenStorageSaga } from "./sagas/TokenStorage"
-import { logoutSaga } from "./sagas/logout"
-import perilReducer from "./reducers/peril"
-import landingReducer from "./reducers/landing"
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { routerReducer } from "react-router-redux";
+import { Navigator, routerMiddleware } from "./components/Navigator";
+import * as Navigation from "./services/Navigation";
+import { theme } from "hedvig-style";
+import { ThemeProvider } from "styled-components";
+import { getOrLoadToken } from "./services/TokenStorage";
+import * as hedvigRedux from "hedvig-redux";
+import moment from "moment";
+import { tokenStorageSaga } from "./sagas/TokenStorage";
+import { logoutSaga } from "./sagas/logout";
+import perilReducer from "./reducers/peril";
+import landingReducer from "./reducers/landing";
 
-window.hedvigRedux = hedvigRedux
-window.Navigation = Navigation
-window.moment = moment
+window.hedvigRedux = hedvigRedux;
+window.Navigation = Navigation;
+window.moment = moment;
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.store = hedvigRedux.configureStore({
       additionalReducers: {
         router: routerReducer,
@@ -28,14 +28,14 @@ class App extends Component {
       },
       additionalMiddleware: [routerMiddleware],
       additionalSagas: [tokenStorageSaga, logoutSaga]
-    })
-    window.store = this.store
-    getOrLoadToken(this.store.dispatch)
+    });
+    window.store = this.store;
+    getOrLoadToken(this.store.dispatch);
   }
 
   componentWillMount() {
     // this.store.dispatch(hedvigRedux.chatActions.getMessages())
-    this.store.dispatch(hedvigRedux.chatActions.getAvatars())
+    this.store.dispatch(hedvigRedux.chatActions.getAvatars());
   }
 
   render() {
@@ -45,8 +45,8 @@ class App extends Component {
           <Navigator />
         </Provider>
       </ThemeProvider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

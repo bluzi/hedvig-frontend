@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const FooterIconStyled = styled.div`
   height: 28px;
@@ -7,4 +7,4 @@ export const FooterIconStyled = styled.div`
   background-size: 84px 28px;
   background-repeat: no-repeat;
   margin-bottom: 20px;
-`
+`;

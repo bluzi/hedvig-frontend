@@ -1,5 +1,5 @@
-import React from "react"
-import Modal from "react-modal"
+import React from "react";
+import Modal from "react-modal";
 
 import {
   DialogContainerStyle,
@@ -7,42 +7,42 @@ import {
   DialogParagraphStyle,
   DialogButtonsContainerStyle,
   DialogButtonStyle
-} from "./styles/dialog"
+} from "./styles/dialog";
 
-Modal.setAppElement("#root")
+Modal.setAppElement("#root");
 
 export default class Dialog extends React.Component {
   close() {
-    this.props.emptyDialog()
+    this.props.emptyDialog();
   }
 
   confirmButtonPressed() {
-    this.props.confirmButtonPressed()
-    this.close()
+    this.props.confirmButtonPressed();
+    this.close();
   }
 
   dismissButtonPressed() {
-    this.props.dismissButtonPressed()
-    this.close()
+    this.props.dismissButtonPressed();
+    this.close();
   }
 
   buttons() {
-    let title = this.props.message.dismissButtonTitle
+    let title = this.props.message.dismissButtonTitle;
     if (
       this.props.message.confirmButtonTitle &&
       !this.props.message.dismissButtonTitle
     ) {
-      title = "Ok"
+      title = "Ok";
     }
-    let dismissButton = (
+    const dismissButton = (
       <DialogButtonStyle
         position="left"
         onClick={() => this.dismissButtonPressed()}
       >
         {title}
       </DialogButtonStyle>
-    )
-    let confirmButton
+    );
+    let confirmButton;
     if (this.props.message.confirmButtonTitle) {
       confirmButton = (
         <DialogButtonStyle
@@ -51,7 +51,7 @@ export default class Dialog extends React.Component {
         >
           {this.props.message.confirmButtonTitle}
         </DialogButtonStyle>
-      )
+      );
     }
 
     return (
@@ -59,7 +59,7 @@ export default class Dialog extends React.Component {
         {dismissButton}
         {confirmButton}
       </DialogButtonsContainerStyle>
-    )
+    );
   }
 
   render() {
@@ -80,7 +80,7 @@ export default class Dialog extends React.Component {
             padding: 0,
             minHeight: 200,
             maxWidth: "80%",
-            position: "absolute",
+            position: "absolute"
           }
         }}
         className="__react_modal"
@@ -93,6 +93,6 @@ export default class Dialog extends React.Component {
           {this.buttons()}
         </DialogContainerStyle>
       </Modal>
-    )
+    );
   }
 }

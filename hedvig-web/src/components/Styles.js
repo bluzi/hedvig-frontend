@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Placeholder = styled.div`
   height: 100%;
@@ -8,6 +8,6 @@ const Placeholder = styled.div`
   align-items: center;
   background-color: white;
   flex-direction: column;
-`
+`;
 
-export { Placeholder }
+export { Placeholder };

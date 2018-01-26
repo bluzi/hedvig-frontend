@@ -1,37 +1,34 @@
-import React from "react"
+import React from "react";
 
-import {
-  SendIconButton,
-  InactiveSendIconButton,
-} from "../Button"
-import { TextInputStyled } from "../styles/chat"
+import { SendIconButton, InactiveSendIconButton } from '../Button';
+import { TextInputStyled } from "../styles/chat";
 
 export default class ChatTextInput extends React.Component {
   componentDidMount() {
     if (this.input) {
-      this.input.focus()
+      this.input.focus();
     }
   }
 
   componentDidUpdate() {
     if (this.input) {
-      this.input.focus()
+      this.input.focus();
     }
   }
 
   render() {
-    const { message, onChange, send, type = "text" } = this.props
+    const { message, onChange, send, type = "text" } = this.props;
 
-    let SendButton = message._inputValue ? (
+    const SendButton = message._inputValue ? (
       <SendIconButton type="submit" />
     ) : (
       <InactiveSendIconButton />
-    )
+    );
     return (
       <form
         onSubmit={e => {
-          e.preventDefault()
-          send(message)
+          e.preventDefault();
+          send(message);
         }}
         style={{
           display: "flex",
@@ -45,15 +42,17 @@ export default class ChatTextInput extends React.Component {
           innerRef={input => (this.input = input)}
           value={message._inputValue || ""}
           onChange={event => {
-            console.log("Stop propagation is: ", event.isPropagationStopped)
-            onChange(message, event.target.value)
+            console.log("Stop propagation is: ", event.isPropagationStopped);
+            onChange(message, event.target.value);
           }}
           style={{ marginBottom: "10px" }}
         />
-        <div style={{ display: "flex", marginBottom: "10px", marginLeft: "10px" }}>
+        <div
+          style={{ display: 'flex', marginBottom: '10px', marginLeft: '10px' }}
+        >
           {SendButton}
         </div>
       </form>
-    )
+    );
   }
 }

@@ -1,8 +1,6 @@
-import React from "react"
-import { Placeholder } from "./Styles"
+import React from "react";
+import { Placeholder } from "./Styles";
 
-const InsuranceDenial = () => {
-  return <Placeholder>Insurance Denial</Placeholder>
-}
+const InsuranceDenial = () => <Placeholder>Insurance Denial</Placeholder>;
 
-export default InsuranceDenial
+export default InsuranceDenial;

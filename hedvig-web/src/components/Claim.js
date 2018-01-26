@@ -1,8 +1,6 @@
-import React from "react"
-import { Placeholder } from "./Styles"
+import React from "react";
+import { Placeholder } from "./Styles";
 
-const Claim = () => {
-  return <Placeholder>Claim</Placeholder>
-}
+const Claim = () => <Placeholder>Claim</Placeholder>;
 
-export default Claim
+export default Claim;

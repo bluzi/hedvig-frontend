@@ -1,22 +1,18 @@
-import { connect } from "react-redux"
-import BankIdCollectInput from "../../components/chat/BankIdCollectInput"
+import { connect } from "react-redux";
+import BankIdCollectInput from "../../components/chat/BankIdCollectInput";
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    message: state.chat.messages[ownProps.messageIndex]
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  message: state.chat.messages[ownProps.messageIndex],
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    startCollecting: referenceId =>
-      dispatch({ type: "BANKID_COLLECT", payload: { referenceId } })
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  startCollecting: referenceId =>
+    dispatch({ type: 'BANKID_COLLECT', payload: { referenceId } }),
+});
 
 const BankIdCollectInputContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BankIdCollectInput)
+)(BankIdCollectInput);
 
-export default BankIdCollectInputContainer
+export default BankIdCollectInputContainer;

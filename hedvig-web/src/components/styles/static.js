@@ -1,13 +1,13 @@
-import styled from "styled-components"
-import { Heading2 } from "./typography"
+import styled from "styled-components";
+import { Heading2 } from "./typography";
 
 export const StaticHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.blackPurple};
-`
+`;
 
 export const HeroStaticHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.black};
-`
+`;
 
 export const Container = styled.div`
   padding: 64px 15px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
       margin-bottom: 131px;
     }
   }
-`
+`;
 
 export const HeroContainer = styled.div`
   height: 595px;
@@ -47,7 +47,7 @@ export const HeroContainer = styled.div`
   background-image: url("https://picsum.photos/g/950/670");
   background-size: cover;
   background-repeat: no-repeat;
-`
+`;
 
 export const LinkStyled = styled.a`
   color: ${props => props.theme.colors.purple};
@@ -55,4 +55,4 @@ export const LinkStyled = styled.a`
   display: block;
   text-decoration: none;
   margin-top: 1em;
-`
+`;

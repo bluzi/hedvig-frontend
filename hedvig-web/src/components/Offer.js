@@ -1,48 +1,46 @@
-import React from "react"
-import Modal from "react-modal"
-import styled from "styled-components"
-import { ResetIconButton } from "./Button"
+import React from "react";
+import Modal from "react-modal";
+import styled from "styled-components";
+import { ResetIconButton } from "./Button";
 
-import { CenteredColumn } from "./styles/landing"
+import { CenteredColumn } from "./styles/landing";
 import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText
-} from "./styles/offer"
+} from "./styles/offer";
 
-import HeaderWithScroll from "../containers/HeaderWithScroll"
-import Category from "../containers/dashboard/Category"
-import MyInsurance from "../containers/dashboard/MyInsurance"
-import InsuranceLimits from "./dashboard/InsuranceLimits"
-import PerilDetailsCarousel from "./dashboard/PerilDetailsCarousel"
-import Footer from "../components/Footer"
+import HeaderWithScroll from "../containers/HeaderWithScroll";
+import Category from "../containers/dashboard/Category";
+import MyInsurance from "../containers/dashboard/MyInsurance";
+import InsuranceLimits from "./dashboard/InsuranceLimits";
+import PerilDetailsCarousel from "./dashboard/PerilDetailsCarousel";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   background-color: ${props => props.theme.colors.offWhite};
   color: ${props => props.theme.colors.black};
-`
+`;
 
 const MyCenteredColumn = CenteredColumn.extend`
   max-width: 630px;
-`
+`;
 
 export default class Offer extends React.Component {
   componentWillMount() {
-    this.props.getInsurance()
-    this.props.getUser()
+    this.props.getInsurance();
+    this.props.getUser();
   }
 
   categories() {
-    return this.props.insurance.categories.map(c => {
-      return (
-        <Category
-          key={c.title}
-          data={c}
-          category={this.props.peril.selectedCategory}
-          initialPerilIndex={this.props.peril.selectedPerilIndex}
-        />
-      )
-    })
+    return this.props.insurance.categories.map(c => (
+      <Category
+        key={c.title}
+        data={c}
+        category={this.props.peril.selectedCategory}
+        initialPerilIndex={this.props.peril.selectedPerilIndex}
+      />
+    ));
   }
 
   categoryWrapper() {
@@ -58,7 +56,7 @@ export default class Offer extends React.Component {
           {this.categories()}
         </MyCenteredColumn>
       </OfferComponentSection>
-    )
+    );
   }
 
   modal() {
@@ -79,7 +77,7 @@ export default class Offer extends React.Component {
           initialPerilIndex={this.props.peril.selectedPerilIndex}
         />
       </Modal>
-    )
+    );
   }
 
   render() {
@@ -97,6 +95,6 @@ export default class Offer extends React.Component {
         <MyInsurance showHeading={false} />
         <Footer />
       </Container>
-    )
+    );
   }
 }

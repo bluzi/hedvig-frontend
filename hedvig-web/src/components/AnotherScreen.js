@@ -1,12 +1,10 @@
-import React from "react"
-import { Placeholder } from "./Styles"
+import React from "react";
+import { Placeholder } from "./Styles";
 
-const AnotherScreen = () => {
-  return (
-    <Placeholder>
-      <p>Another Screen</p>
-    </Placeholder>
-  )
-}
+const AnotherScreen = () => (
+  <Placeholder>
+    <p>Another Screen</p>
+  </Placeholder>
+);
 
-export default AnotherScreen
+export default AnotherScreen;

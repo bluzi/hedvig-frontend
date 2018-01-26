@@ -1,4 +1,4 @@
-import { SCROLL_Y_POSITION } from "../actions/scroll"
+import { SCROLL_Y_POSITION } from "../actions/scroll";
 
 const reducer = (
   state = {
@@ -8,10 +8,10 @@ const reducer = (
 ) => {
   switch (action.type) {
     case SCROLL_Y_POSITION:
-      return Object.assign({}, state, { scrollY: action.payload })
+      return Object.assign({}, state, { scrollY: action.payload });
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

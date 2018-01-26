@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default class TabBar extends React.Component {
   render() {
@@ -18,6 +18,6 @@ export default class TabBar extends React.Component {
         <Link to="/dashboard">Försäkring</Link>
         <Link to="/profile">Profil</Link>
       </div>
-    )
+    );
   }
 }

@@ -1,19 +1,19 @@
-import styled from "styled-components"
-import { Heading2 } from "./typography"
+import styled from "styled-components";
+import { Heading2 } from "./typography";
 
 export const OfferHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.black};
-`
+`;
 
 export const PassiveText = styled.span`
   font-size: 14px;
   color: ${props => props.theme.colors.passiveText};
-`
+`;
 
 export const Divider = styled.div`
   width: 100%;
   border-bottom: solid 1px ${props => props.theme.colors.offWhite};
-`
+`;
 
 export const OfferComponentSection = styled.div`
   display: flex !important;
@@ -37,4 +37,4 @@ export const OfferComponentSection = styled.div`
     padding-left: 114px;
     padding-right: 114px;
   }
-`
+`;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes } from "styled-components";
 
 const slideFromLeft = keyframes`
   from {
@@ -9,7 +9,7 @@ const slideFromLeft = keyframes`
   to {
     transform: translate(0px, 0px)
   }
-`
+`;
 
 export const StyledUserMessage = styled.div`
   font-family: "Circular Std Book";
@@ -21,7 +21,7 @@ export const StyledUserMessage = styled.div`
   display: flex;
   align-items: center;
   word-break: break-word;
-`
+`;
 
 export const StyledMessage = styled.div`
   font-family: "Merriweather";
@@ -34,20 +34,20 @@ export const StyledMessage = styled.div`
   align-items: center;
   word-break: break-word;
   animation: 0.5s ${slideFromLeft} 1;
-`
+`;
 
 export const MessageContainerStyled = styled.div`
   background-size: 16px 22px;
   background-position: bottom 15px left;
   background-repeat: no-repeat;
-`
+`;
 
 export const OptionsContainerStyled = styled.div`
   max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-`
+`;
 
 export const WrappedOptionsContainerStyled = OptionsContainerStyled.extend`
   flex-wrap: wrap;
@@ -60,11 +60,11 @@ export const WrappedOptionsContainerStyled = OptionsContainerStyled.extend`
     }
     margin-left: 10px;
   }
-`
+`;
 
 export const StyledOptionContainer = styled.div`
   margin-bottom: 8px;
-`
+`;
 
 export const ChatAreaStyled = styled.div`
   display: flex;
@@ -99,7 +99,7 @@ export const ChatAreaStyled = styled.div`
     padding-left: 114px;
     padding-right: 114px;
   }
-`
+`;
 
 export const MessageAreaStyled = styled.div`
   min-height: 100px;
@@ -110,7 +110,7 @@ export const MessageAreaStyled = styled.div`
   flex: 1;
   /* Enable momentum scrolling on iOS */
   -webkit-overflow-scrolling: touch;
-`
+`;
 
 export const InputAreaStyled = styled.div`
   display: flex;
@@ -118,7 +118,7 @@ export const InputAreaStyled = styled.div`
   justify-content: flex-end;
   padding-top: 20px;
   ${"" /* margin-bottom: 117px; */};
-`
+`;
 
 export const TextInputStyled = styled.input`
   font-family: "Circular Std Book";
@@ -133,4 +133,4 @@ export const TextInputStyled = styled.input`
   &[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-`
+`;

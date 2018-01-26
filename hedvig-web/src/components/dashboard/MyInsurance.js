@@ -1,19 +1,19 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import { CenteredColumn } from "../styles/landing"
+import { CenteredColumn } from "../styles/landing";
 import {
   OfferComponentSection,
   OfferHeading2,
   PassiveText,
   Divider
-} from "../styles/offer"
-import { TurquoiseRoundedButtonStyled } from "../styles/button"
+} from "../styles/offer";
+import { TurquoiseRoundedButtonStyled } from "../styles/button";
 
 const Container = OfferComponentSection.extend`
   background-color: ${props => props.theme.colors.purple};
   padding: 38px 15px 38px 15px;
-`
+`;
 
 const MyCenteredColumn = CenteredColumn.extend`
   background-color: white;
@@ -26,26 +26,26 @@ const MyCenteredColumn = CenteredColumn.extend`
   @media (min-width: 993px) {
     max-width: 555px;
   }
-`
+`;
 
 const PriceText = styled.div`
   color: ${props => props.theme.colors.purple};
   font-size: 20px;
-`
+`;
 
 const BindingTimeText = styled.div`
   color: ${props => props.theme.colors.hedvigMessageText};
   font-size: 16px;
-`
+`;
 
 const PassiveTextWithImage = PassiveText.extend`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
-  let maybeHeading
+  let maybeHeading;
   if (showHeading) {
     maybeHeading = (
       <div style={{ width: "100%" }}>
@@ -57,7 +57,7 @@ const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
         </div>
         <Divider />
       </div>
-    )
+    );
   }
 
   return (
@@ -102,7 +102,7 @@ const MyInsurance = ({ showHeading = true, price, address, checkout }) => {
         </div>
       </MyCenteredColumn>
     </Container>
-  )
-}
+  );
+};
 
-export default MyInsurance
+export default MyInsurance;

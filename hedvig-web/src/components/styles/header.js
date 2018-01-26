@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const HeaderStyled = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ export const HeaderStyled = styled.div`
   @media (min-width: 1200px) {
     padding: 0 40px;
   }
-`
+`;
 
 export const HeaderIconStyled = styled.div`
   height: 28px;
@@ -35,4 +35,4 @@ export const HeaderIconStyled = styled.div`
   background-image: url("/assets/identity/hedvig_wordmark/hedvig_wordmark_black.svg");
   background-size: 84px 28px;
   background-repeat: no-repeat;
-`
+`;

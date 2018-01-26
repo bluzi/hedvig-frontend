@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components"
-import { Heading2 } from "./typography"
-import Lottie from "react-lottie"
+import styled, { keyframes } from "styled-components";
+import { Heading2 } from "./typography";
+import Lottie from "react-lottie";
 
 // General
 
@@ -10,7 +10,7 @@ export const CenteredColumn = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-`
+`;
 
 export const LandingComponentSection = styled.div`
   display: flex !important;
@@ -34,7 +34,7 @@ export const LandingComponentSection = styled.div`
     padding-left: 114px;
     padding-right: 114px;
   }
-`
+`;
 
 // Splash
 
@@ -61,7 +61,7 @@ export const SplashStyled = styled.div`
   @media (min-width: 1200px) {
     padding-bottom: 84px;
   }
-`
+`;
 
 export const AnimationsContainer = styled.div`
   display: flex;
@@ -79,7 +79,7 @@ export const AnimationsContainer = styled.div`
       }
     }
   }
-`
+`;
 
 export const SplashText = styled.div`
   display: flex;
@@ -90,7 +90,7 @@ export const SplashText = styled.div`
   height: 100%;
   width: 100%;
   padding: 0 0 0 4em;
-`
+`;
 
 export const AnimationStyled = styled(Lottie)`
   height: 520px;
@@ -111,7 +111,7 @@ export const AnimationStyled = styled(Lottie)`
     height: 615px;
     width: 410px;
   }
-`
+`;
 // Asset tracker demo
 
 export const AssetTrackerDemoStyled = LandingComponentSection.extend`
@@ -129,11 +129,11 @@ export const AssetTrackerDemoStyled = LandingComponentSection.extend`
   @media (min-width: 1200px) {
     padding-top: 124px;
   }
-`
+`;
 
 export const PurpleHeading = Heading2.extend`
   color: ${props => props.theme.colors.blackPurple};
-`
+`;
 
 export const SubItemContainer = styled.div`
   display: flex;
@@ -145,7 +145,7 @@ export const SubItemContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`
+`;
 
 export const SubItem = styled.div`
   display: flex;
@@ -153,17 +153,17 @@ export const SubItem = styled.div`
   text-align: center;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const SubItemText = styled.p`
   padding: 12px 0;
   font-size: 18px;
-`
+`;
 
 export const HeadingContainer = styled.div`
   text-align: center;
   padding: 0 0 36px;
-`
+`;
 
 export const HeadingSubText = styled.p`
   text-align: center;
@@ -172,7 +172,7 @@ export const HeadingSubText = styled.p`
   @media (min-width: 800px) {
     text-align: left;
   }
-`
+`;
 
 const FadeInAnimation = keyframes`
   from {
@@ -182,11 +182,11 @@ const FadeInAnimation = keyframes`
   to {
     opacity: 1;
   }
-`
+`;
 
 export const AbsoluteFadeInParagraph = styled.p`
   position: absolute;
   max-width: 600px;
 
   animation: ${FadeInAnimation} 0.15s linear;
-`
+`;

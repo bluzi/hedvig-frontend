@@ -1,4 +1,4 @@
-import { PERIL_SELECTED } from "../actions/peril"
+import { PERIL_SELECTED } from "../actions/peril";
 
 const reducer = (
   state = {
@@ -14,10 +14,10 @@ const reducer = (
         selectedPerilIndex: action.payload.category
           ? action.payload.category.perils.indexOf(action.payload.peril)
           : null
-      })
+      });
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const NavStyled = styled.div`
   display: flex;
@@ -7,4 +7,4 @@ export const NavStyled = styled.div`
   align-items: center;
   padding: 16px 40px;
   border-bottom: solid 1px ${props => props.theme.colors.lightGray};
-`
+`;

@@ -1,13 +1,13 @@
-import React from "react"
-import moment from "moment"
-import "moment/locale/sv"
+import React from "react";
+import moment from "moment";
+import "moment/locale/sv";
 
-import styled from "styled-components"
-import "react-dates/initialize"
-import { SingleDatePicker } from "react-dates"
-import { OPEN_UP } from "react-dates/constants"
-import "react-dates/lib/css/_datepicker.css"
-import { SendIconButton } from "../Button"
+import styled from "styled-components";
+import "react-dates/initialize";
+import { SingleDatePicker } from "react-dates";
+import { OPEN_UP } from "react-dates/constants";
+import "react-dates/lib/css/_datepicker.css";
+import { SendIconButton } from "../Button";
 
 const WidgetContainer = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const WidgetContainer = styled.div`
       margin-top: 0;
     }
   }
-`
+`;
 
 const DatePickerContainer = styled.div`
   font-family: "Circular Std Book" !important;
@@ -44,22 +44,22 @@ const DatePickerContainer = styled.div`
       }
     }
   }
-`
+`;
 
 class DateInput extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       focused: false
-    }
+    };
   }
 
   dateChange(date) {
-    this.props.onChange(this.props.message, date.toISOString())
+    this.props.onChange(this.props.message, date.toISOString());
   }
 
   render() {
-    let { message, send } = this.props
+    const { message, send } = this.props;
     return (
       <WidgetContainer>
         <DatePickerContainer>
@@ -76,14 +76,14 @@ class DateInput extends React.Component {
             isOutsideRange={() => false}
             openDirection={OPEN_UP}
             style={{ boxSizing: "border-box !important" }}
-            readOnly={true}
-            hideKeyboardShortcutsPanel={true}
+            readOnly
+            hideKeyboardShortcutsPanel
           />
         </DatePickerContainer>
         <SendIconButton onClick={() => send(message)} />
       </WidgetContainer>
-    )
+    );
   }
 }
 
-export default DateInput
+export default DateInput;

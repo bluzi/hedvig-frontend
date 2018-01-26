@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Heading1 = styled.span`
   font-family: "Merriweather";
@@ -13,7 +13,7 @@ export const Heading1 = styled.span`
     font-size: 40px;
     line-height: 56px;
   }
-`
+`;
 
 export const Heading2 = styled.span`
   font-family: "Merriweather";
@@ -35,12 +35,12 @@ export const Heading2 = styled.span`
     font-size: 36px;
     line-height: 52px;
   }
-`
+`;
 
 export const WhiteHeading2 = Heading2.extend`
   color: white;
-`
+`;
 
 export const BlackPurpleHeading2 = Heading2.extend`
   color: ${props => props.theme.colors.blackPurple};
-`
+`;

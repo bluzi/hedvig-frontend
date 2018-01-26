@@ -1,19 +1,19 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import Modal from "react-modal"
+import React from "react";
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
-import TabBar from "./TabBar"
-import Category from "../containers/dashboard/Category"
-import MyInsurance from "./dashboard/MyInsurance"
-import InsuranceLimits from "./dashboard/InsuranceLimits"
-import PerilDetails from "./dashboard/PerilDetails"
-import Footer from "../components/Footer"
+import TabBar from "./TabBar";
+import Category from "../containers/dashboard/Category";
+import MyInsurance from "./dashboard/MyInsurance";
+import InsuranceLimits from "./dashboard/InsuranceLimits";
+import PerilDetails from "./dashboard/PerilDetails";
+import Footer from "../components/Footer";
 
 export default class Dashboard extends React.Component {
   categories() {
-    return this.props.insurance.categories.map(c => {
-      return <Category key={c.title} data={c} />
-    })
+    return this.props.insurance.categories.map(c => (
+      <Category key={c.title} data={c} />
+    ));
   }
 
   render() {
@@ -43,6 +43,6 @@ export default class Dashboard extends React.Component {
         <MyInsurance showHeading={false} />
         <Footer />
       </div>
-    )
+    );
   }
 }
