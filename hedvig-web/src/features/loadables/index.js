@@ -6,47 +6,47 @@ const Loading = () => (
 )
 
 const LoadableLanding = Loadable({
-  loader: () => import("../landing"),
+  loader: () => import(/* webpackChunkName: "landing" */"../landing"),
   loading: Loading
 })
 
 const LoadableAboutUs = Loadable({
-  loader: () => import("../static/AboutUs"),
+  loader: () => import(/* webpackChunkName: "AboutUs" */"../static/AboutUs"),
   loading: Loading
 })
 
 const LoadableChat = Loadable({
-  loader: () => import("../../containers/Chat"),
+  loader: () => import(/* webpackChunkName: "Chat" */"../../containers/Chat"),
   loading: () => Loading
 })
 
 const LoadableLogout = Loadable({
-  loader: () => import("../../components/Logout"),
+  loader: () => import(/* webpackChunkName: "Logout" */"../../components/Logout"),
   loading: Loading
 })
 
 const LoadableLegal = Loadable({
-  loader: () => import("../static/Legal"),
+  loader: () => import(/* webpackChunkName: "Legal" */"../static/Legal"),
   loading: Loading
 })
 
 const LoadableContact = Loadable({
-  loader: () => import("../static/Contact"),
+  loader: () => import(/* webpackChunkName: "Contact" */"../static/Contact"),
   loading: Loading
 })
 
 const LoadableTerms = Loadable({
-  loader: () => import("../static/Terms"),
+  loader: () => import(/* webpackChunkName: "Terms" */"../static/Terms"),
   loading: Loading
 })
 
 const LoadableWaitList = Loadable({
-  loader: () => import("../WaitList"),
+  loader: () => import(/* webpackChunkName: "WaitList" */"../WaitList"),
   loading: Loading
 })
 
 const LoadableNotFound = Loadable({
-  loader: () => import("../../components/NotFound"),
+  loader: () => import(/* webpackChunkName: "NotFound" */"../../components/NotFound"),
   loading: Loading
 })
 

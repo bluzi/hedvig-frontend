@@ -67,7 +67,8 @@
     "build": "make prepare-build && node scripts/build.js && make link",
     "test": "node scripts/test.js",
     "deploy": "yarn build && s3cmd sync build/* $HEDVIG_S3_BUCKET",
-    "lint": "./node_modules/.bin/eslint src"
+    "lint": "./node_modules/.bin/eslint src",
+    "bundle:analyze": "node scripts/analyze.js"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -83,7 +84,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "jest": "^22.3.0",
-    "react-router-enzyme-context": "^1.2.0"
+    "react-router-enzyme-context": "^1.2.0",
+    "webpack-bundle-analyzer": "^2.10.0"
   },
   "jest": {
     "collectCoverageFrom": [
