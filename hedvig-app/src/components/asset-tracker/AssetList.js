@@ -109,7 +109,7 @@ export default class AssetList extends React.Component {
           <StyledAssetListHeaderContainer>
             <StyledAddItemText>Lägg till pryl</StyledAddItemText>
             <AddButton
-              onPress={() => this.props.navigation.navigate("AddEditAsset")}
+              onPress={() => this.props.navigation.navigate("AddAsset")}
             />
           </StyledAssetListHeaderContainer>
         </StyledListHeader>
