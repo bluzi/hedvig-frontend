@@ -10,11 +10,15 @@ import {
   TouchableOpacity,
   Image,
   KeyboardAvoidingView,
-  TextInput,
 } from "react-native"
 import { ImagePicker } from "expo"
+import { reduxForm, Field } from "redux-form"
 
-import { NavBar } from "../../../components/NavBar"
+import TextField from "./components/TextField"
+import CurrencyField from "./components/CurrencyField"
+import TransparentNavBar from "./components/TransparentNavbar";
+
+const required = val => val ? undefined : 'required'
 
 const styleSheet = StyleSheet.create({
   container: {
@@ -102,6 +106,12 @@ class AddAsset extends React.Component {
     console.log('Uploading...')
   }
 
+  _focusNumberInput = () => {
+    if (this._numberInput) {
+      this._numberInput.focus()
+    }
+  }
+
   render() {
     const { imageUri } = this.props;
     return (
@@ -110,7 +120,7 @@ class AddAsset extends React.Component {
         keyboardVerticalOffset={32}
         style={styleSheet.container}
       >
-        <NavBar />
+        <TransparentNavBar />
         <View style={styleSheet.imageOrAddImageButtonsContainer}>
           {imageUri ? (
             <Image
@@ -127,20 +137,16 @@ class AddAsset extends React.Component {
             )}
         </View>
         <View style={styleSheet.formContainer}>
-          <View style={styleSheet.textInputContainer}>
-            <TextInput
-              placeholder="Vad är det för pryl?"
-              underlineColorAndroid="transparent"
-              style={styleSheet.textInput}
-            />
-          </View>
-          <View style={styleSheet.textInputContainer}>
-            <TextInput
-              placeholder="Vad köpte du den för?"
-              underlineColorAndroid="transparent"
-              style={styleSheet.textInput}
-            />
-          </View>
+          <Field
+            name="itemName"
+            component={TextField}
+            validate={required}
+          />
+          <Field
+            name="itemPrice"
+            component={CurrencyField}
+            validate={required}
+          />
           <TouchableOpacity
             onPress={this._upload}
             style={styleSheet.uploadButton}
@@ -158,11 +164,12 @@ class AddAsset extends React.Component {
 
 export { AddAsset as AddAssetComponent }
 
-export default connect(
+export default reduxForm({ form: "addAsset" })(
+connect(
   state => ({
     imageUri: state.addAsset.uri
   }),
   dispatch => ({
     imageTaken: uri => dispatch({type: "ADD_ASSET/SET_IMAGE_URI", payload: {uri}})
   })
-)(AddAsset)
+)(AddAsset))

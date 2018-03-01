@@ -3,6 +3,7 @@ import React from "react"
 import { AppState, Keyboard, Platform } from "react-native"
 import { Provider } from "react-redux"
 import Sentry from "sentry-expo"
+import { reducer as formReducer } from "redux-form"
 import {
   ActionSheetProvider,
   connectActionSheet
@@ -54,6 +55,7 @@ export class App extends React.Component {
         status: statusMessageReducer,
         router: routerReducer,
         addAsset: addAssetReducer,
+        form: formReducer,
       },
       additionalSagas: [
         apiAndNavigateToChatSaga,
