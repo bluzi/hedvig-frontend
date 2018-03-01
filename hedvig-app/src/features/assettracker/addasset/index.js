@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import React from "react"
 import PropTypes from "prop-types"
+import { connect } from "react-redux"
 import {
   View,
   Text,
@@ -27,10 +28,14 @@ const styleSheet = StyleSheet.create({
     paddingBottom: 16,
     alignItems: "center",
     justifyContent: "center",
+    height: 160
   },
   addImageIcon: {
     width: 56,
     height: 56,
+  },
+  image: {
+    height: 160,
   },
   formContainer: {
     flex: 4,
@@ -45,6 +50,7 @@ const styleSheet = StyleSheet.create({
   textInput: {
     height: 40,
     fontSize: 18,
+    fontWeight: "400",
     fontFamily: "merriweather",
     alignItems: "center",
     marginHorizontal: 24
@@ -71,6 +77,7 @@ const styleSheet = StyleSheet.create({
 class AddAsset extends React.Component {
   static propTypes = {
     imageUri: PropTypes.string,
+    imageTaken: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -104,7 +111,10 @@ class AddAsset extends React.Component {
         <NavBar />
         <View style={styleSheet.imageOrAddImageButtonsContainer}>
           {imageUri ? (
-            <Image source={imageUri} />
+            <Image
+              source={{uri: imageUri}}
+              style={styleSheet.image}
+            />
           ) : (
               <TouchableOpacity onPress={this._addImage}>
                 <Image
@@ -143,10 +153,14 @@ class AddAsset extends React.Component {
   }
 }
 
-AddAsset.propTypes = {
-}
 
-AddAsset.defaultProps = {
-}
+export { AddAsset as AddAssetComponent }
 
-export default AddAsset
+export default connect(
+  state => ({
+    imageUri: state.addAsset.uri
+  }),
+  dispatch => ({
+    imageTaken: uri => dispatch({type: "ADD_ASSET/SET_IMAGE_URI", payload: {uri}})
+  })
+)(AddAsset)

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddAsset /> Should render correctly 1`] = `
+<KeyboardAvoidingView
+  behavior="padding"
+  keyboardVerticalOffset={32}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <NavBar
+    headerLeft={<Styled(View) />}
+    headerRight={<Styled(View) />}
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "paddingBottom": 16,
+        "paddingTop": 16,
+      }
+    }
+  >
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 56,
+            "width": 56,
+          }
+        }
+      />
+    </TouchableOpacity>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 4,
+        "justifyContent": "flex-start",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderBottomColor": "#F1F3F7",
+          "borderBottomWidth": 1,
+          "height": 64,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        placeholder="Vad är det för pryl?"
+        style={
+          Object {
+            "alignItems": "center",
+            "fontFamily": "merriweather",
+            "fontSize": 18,
+            "height": 40,
+            "marginHorizontal": 24,
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "borderBottomColor": "#F1F3F7",
+          "borderBottomWidth": 1,
+          "height": 64,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        placeholder="Vad köpte du den för?"
+        style={
+          Object {
+            "alignItems": "center",
+            "fontFamily": "merriweather",
+            "fontSize": 18,
+            "height": 40,
+            "marginHorizontal": 24,
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#651EFF",
+          "borderRadius": 24,
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginTop": 16,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#651EFF",
+            "fontFamily": "circular",
+            "fontSize": 16,
+          }
+        }
+      >
+        Spara
+      </Text>
+    </TouchableOpacity>
+  </View>
+</KeyboardAvoidingView>
+`;

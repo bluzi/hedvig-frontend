@@ -27,6 +27,7 @@ import appStateChangeReducer from "./src/reducers/appState"
 import keyboardStateChangeReducer from "./src/reducers/keyboardState"
 import statusMessageReducer from "./src/reducers/statusMessage"
 import routerReducer from "./src/reducers/router"
+import addAssetReducer from "./src/features/assettracker/addasset/reducer"
 import { appStateSaga } from "./src/sagas/appState"
 import { keyboardSaga } from "./src/sagas/keyboard"
 import { navigationSaga } from "./src/sagas/navigation"
@@ -52,6 +53,7 @@ export class App extends React.Component {
         keyboard: keyboardStateChangeReducer,
         status: statusMessageReducer,
         router: routerReducer,
+        addAsset: addAssetReducer,
       },
       additionalSagas: [
         apiAndNavigateToChatSaga,
