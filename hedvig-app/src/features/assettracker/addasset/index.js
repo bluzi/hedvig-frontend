@@ -28,14 +28,16 @@ const styleSheet = StyleSheet.create({
     paddingBottom: 16,
     alignItems: "center",
     justifyContent: "center",
-    height: 160
+    height: 200
   },
   addImageIcon: {
     width: 56,
     height: 56,
   },
   image: {
-    height: 160,
+    height: 200,
+    alignSelf: "stretch",
+    resizeMode: "cover",
   },
   formContainer: {
     flex: 4,
