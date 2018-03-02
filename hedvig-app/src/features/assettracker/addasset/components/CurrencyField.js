@@ -19,8 +19,15 @@ const styles = StyleSheet.create({
   },
 })
 
+const presentValue = (value, active) => {
+  if (!value || active) {
+    return value
+  }
 
-const TextField = ({
+  return `${value} kr`
+}
+
+const CurrencyField = ({
   input,
   meta,
   onSubmit,
@@ -32,8 +39,8 @@ const TextField = ({
       onChangeText={input.onChange}
       onBlur={input.onBlur}
       onFocus={input.onFocus}
-      value={`${input.value}${!meta.active && input.value && input.value !== 0 ? " kr" : ""}`}
-      placeholder="Vad är det för pryl?"
+      value={presentValue(input.value, meta.active)}
+      placeholder="Vad köpte du den för?"
       underlineColorAndroid="transparent"
       style={styles.textInput}
       onSubmitEditing={onSubmit}
@@ -43,8 +50,8 @@ const TextField = ({
   </View>
 )
 
-TextField.propTypes = {
-  ...propTypes
+CurrencyField.propTypes = {
+  // ...propTypes
 }
 
-export default TextField
+export default CurrencyField

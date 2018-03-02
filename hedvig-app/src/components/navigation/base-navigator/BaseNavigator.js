@@ -52,13 +52,15 @@ const ChatContainer = ({navigation}) => {
 
 ChatContainer.router = ChatModalNavigator.router
 
-const HomeContainer = () => {
+const HomeContainer = ({navigation}) => {
   return (
     <AppContainer>
-      <HomeBase />
+      <HomeBase navigation={navigation}/>
     </AppContainer>
   )
 }
+
+HomeContainer.router = HomeBase.router
 
 const BaseNavigator = StackNavigator(
   {

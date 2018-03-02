@@ -1,5 +1,5 @@
 import React from "react"
-import { View, TextInput, StyleSheet } from "react-native"
+import { View, TextInput, StyleSheet, Image, Text } from "react-native"
 import { propTypes } from "redux-form"
 
 const styles = StyleSheet.create({
@@ -17,11 +17,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 24
   },
+  label: {
+
+  },
+  validIconContainer: {
+    position: "absolute",
+    right: 21
+  },
+  validIcon: {
+    width: 24,
+    height: 24
+  }
 })
 
 
 const TextField = ({
   input,
+  meta,
   onNext,
   ...props
 }) => (
@@ -38,11 +50,24 @@ const TextField = ({
       onSubmitEditing={onNext}
       returnKeyType="next"
     />
+    { !meta.active && input.value ? (
+      <Text style={styles.label}>
+        Pryl
+      </Text>
+    ) : null}
+    { !meta.active && meta.valid ? (
+      <View style={styles.validIconContainer}>
+        <Image
+          source={require("../../../../../assets/icons/list_items/done_edit_list_item.png")}
+          style={styles.validIcon}
+        />
+      </View>
+    ) : null }
   </View>
 )
 
 TextField.propTypes = {
-  ...propTypes
+  // ...propTypes
 }
 
 export default TextField

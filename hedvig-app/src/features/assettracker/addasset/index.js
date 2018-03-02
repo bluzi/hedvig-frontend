@@ -10,9 +10,11 @@ import {
   TouchableOpacity,
   Image,
   KeyboardAvoidingView,
+  ScrollView,
 } from "react-native"
 import { ImagePicker } from "expo"
 import { reduxForm, Field } from "redux-form"
+import { NavigationActions } from "react-navigation"
 
 import TextField from "./components/TextField"
 import CurrencyField from "./components/CurrencyField"
@@ -27,7 +29,6 @@ const styleSheet = StyleSheet.create({
     justifyContent: "flex-start"
   },
   imageOrAddImageButtonsContainer: {
-    flex: 1,
     paddingTop: 16,
     paddingBottom: 16,
     alignItems: "center",
@@ -44,7 +45,6 @@ const styleSheet = StyleSheet.create({
     resizeMode: "cover",
   },
   formContainer: {
-    flex: 4,
     justifyContent: "flex-start",
   },
   textInputContainer: {
@@ -113,49 +113,54 @@ class AddAsset extends React.Component {
   }
 
   render() {
-    const { imageUri } = this.props;
+    const { imageUri, goBack } = this.props;
     return (
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={32}
         style={styleSheet.container}
       >
-        <TransparentNavBar />
-        <View style={styleSheet.imageOrAddImageButtonsContainer}>
-          {imageUri ? (
-            <Image
-              source={{uri: imageUri}}
-              style={styleSheet.image}
+        <TransparentNavBar
+          goBack={goBack}
+        />
+        <ScrollView>
+          <View style={styleSheet.imageOrAddImageButtonsContainer}>
+            {imageUri ? (
+              <Image
+                source={{uri: imageUri}}
+                style={styleSheet.image}
+                resizeMode="cover"
+              />
+            ) : (
+                <TouchableOpacity onPress={this._addImage}>
+                  <Image
+                    source={require("../../../../assets/icons/choose_picture.png")}
+                    style={styleSheet.addImageIcon}
+                  />
+                </TouchableOpacity>
+              )}
+          </View>
+          <View style={styleSheet.formContainer}>
+            <Field
+              name="itemName"
+              component={TextField}
+              validate={required}
             />
-          ) : (
-              <TouchableOpacity onPress={this._addImage}>
-                <Image
-                  source={require("../../../../assets/icons/choose_picture.png")}
-                  style={styleSheet.addImageIcon}
-                />
-              </TouchableOpacity>
-            )}
-        </View>
-        <View style={styleSheet.formContainer}>
-          <Field
-            name="itemName"
-            component={TextField}
-            validate={required}
-          />
-          <Field
-            name="itemPrice"
-            component={CurrencyField}
-            validate={required}
-          />
-          <TouchableOpacity
-            onPress={this._upload}
-            style={styleSheet.uploadButton}
-          >
-            <Text style={styleSheet.uploadButtonText}>
-              Spara
-            </Text>
-          </TouchableOpacity>
-        </View>
+            <Field
+              name="itemPrice"
+              component={CurrencyField}
+              validate={required}
+            />
+            <TouchableOpacity
+              onPress={this._upload}
+              style={styleSheet.uploadButton}
+            >
+              <Text style={styleSheet.uploadButtonText}>
+                Spara
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     )
   }
@@ -170,6 +175,7 @@ connect(
     imageUri: state.addAsset.uri
   }),
   dispatch => ({
-    imageTaken: uri => dispatch({type: "ADD_ASSET/SET_IMAGE_URI", payload: {uri}})
+    imageTaken: uri => dispatch({type: "ADD_ASSET/SET_IMAGE_URI", payload: {uri}}),
+    goBack: () => dispatch(NavigationActions.back())
   })
 )(AddAsset))
