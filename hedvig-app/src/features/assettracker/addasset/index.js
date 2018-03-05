@@ -22,7 +22,7 @@ import TransparentNavBar from "./components/TransparentNavbar";
 
 const required = val => val ? undefined : 'required'
 
-const styleSheet = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
@@ -47,19 +47,20 @@ const styleSheet = StyleSheet.create({
   formContainer: {
     justifyContent: "flex-start",
   },
-  textInputContainer: {
+  inputContainer: {
     borderBottomWidth: 1,
     borderBottomColor: "#F1F3F7",
     height: 64,
     justifyContent: "center"
   },
-  textInput: {
-    height: 40,
+  inputText: {
     fontSize: 18,
     fontWeight: "400",
     fontFamily: "merriweather",
     alignItems: "center",
-    marginHorizontal: 24
+    justifyContent: "center",
+    marginHorizontal: 24,
+    color: "#F9FAFC"
   },
   uploadButton: {
     marginTop: 16,
@@ -118,34 +119,37 @@ class AddAsset extends React.Component {
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={32}
-        style={styleSheet.container}
+        style={styles.container}
       >
         <TransparentNavBar
           goBack={goBack}
         />
         <ScrollView>
-          <View style={styleSheet.imageOrAddImageButtonsContainer}>
+          <View style={styles.imageOrAddImageButtonsContainer}>
             {imageUri ? (
               <Image
                 source={{uri: imageUri}}
-                style={styleSheet.image}
+                style={styles.image}
                 resizeMode="cover"
               />
             ) : (
                 <TouchableOpacity onPress={this._addImage}>
                   <Image
                     source={require("../../../../assets/icons/choose_picture.png")}
-                    style={styleSheet.addImageIcon}
+                    style={styles.addImageIcon}
                   />
                 </TouchableOpacity>
               )}
           </View>
-          <View style={styleSheet.formContainer}>
+          <View style={styles.formContainer}>
             <Field
               name="itemName"
               component={TextField}
               validate={required}
             />
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>Select a date</Text>
+            </View>
             <Field
               name="itemPrice"
               component={CurrencyField}
@@ -153,9 +157,9 @@ class AddAsset extends React.Component {
             />
             <TouchableOpacity
               onPress={this._upload}
-              style={styleSheet.uploadButton}
+              style={styles.uploadButton}
             >
-              <Text style={styleSheet.uploadButtonText}>
+              <Text style={styles.uploadButtonText}>
                 Spara
               </Text>
             </TouchableOpacity>
