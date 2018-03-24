@@ -20,6 +20,8 @@ import { rootSaga } from "./sagas/index"
 
 import mockChatActions from "./actions/mock/chat"
 
+throw new Erorr("hey");
+
 function configureStore(
   {
     initialState,
