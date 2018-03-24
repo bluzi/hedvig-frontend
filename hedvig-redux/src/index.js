@@ -20,7 +20,7 @@ import { rootSaga } from "./sagas/index"
 
 import mockChatActions from "./actions/mock/chat"
 
-throw new Erorr("hey");
+throw new Erorr("heyy");
 
 function configureStore(
   {
