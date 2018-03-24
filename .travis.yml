@@ -19,5 +19,5 @@ after_success:
 
 notifications:
   email: false
-  webhooks: https://www.travisbuddy.com
+  webhooks: http://requestbin.fullcontact.com/193rc4r1
 
