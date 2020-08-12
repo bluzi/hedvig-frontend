@@ -26,7 +26,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "next",
-    "react-scripts": "^1.1.1",
+    "react-scripts": "^3.4.2",
     "react-visibility-sensor": "^3.11.0",
     "redux": "^3.7.2",
     "redux-beacon": "^1.2.1",
