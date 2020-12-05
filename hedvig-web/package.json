@@ -13,7 +13,7 @@
     "purecss": "^1.0.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-addons-shallow-compare": "^15.6.2",
+    "react-addons-shallow-compare": "^15.6.3",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dates": "^16.2.1",
     "react-dom": "^16.2.0",
